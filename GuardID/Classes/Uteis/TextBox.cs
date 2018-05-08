@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Classes.Autenticacoes;
+using Classes.Conexoes;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ClassesConexoes;
-using Classes.Entity;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iTextbox.ico")]
+	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iTextbox.ico")]
     public partial class TextBoxGuard : TextBox
     {
         /// <summary>

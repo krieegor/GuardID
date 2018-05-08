@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
-using System.Data;
+﻿using System.Drawing;
 #pragma warning disable CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
-using Microsoft.Reporting.WinForms;
 #pragma warning restore CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
 
 namespace Classes.Uteis
 {
-    public static class Imagens
+	public static class Imagens
     {
         public static Bitmap EscreverTextoEmImagem(Bitmap imagem, string texto, Font fonte = null, Color? cor = null, StringFormat formato = null, PointF? localizacao = null)
         {

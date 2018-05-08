@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Classes.Autenticacoes;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Drawing;
-using Classes.Entity;
+using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iMasktextbox.ico")]
+	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iMasktextbox.ico")]
     public partial class MaskedTextBoxFoneGuard : MaskedTextBoxDataGuard
     {
         // DDDs que necessita de nove digitos (para celular)

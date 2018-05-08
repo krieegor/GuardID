@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Uteis;
-using Classes.Entity;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\lista.ico")]
+	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\lista.ico")]
     public partial class ListaCampos : UserControl
     {
         public ListaCampos()
