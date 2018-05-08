@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using Classes.Entity;
 using System.Data;
+using Classes.Conexoes;
 
-namespace Classes.Autenticacao
+namespace Classes.Autenticacoes
 {
 	public class Autenticacao
     {

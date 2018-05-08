@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
+            this.lblTitulo = new System.Uteis.CheckBoxGuard(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cboCampo = new System.Windows.Forms.Guard.ComboBoxGuard(this.components);
+            this.cboCampo = new System.Uteis.ComboBoxGuard(this.components);
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -156,11 +156,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Guard.CheckBoxGuard lblTitulo;
+        public System.Uteis.CheckBoxGuard lblTitulo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        public System.Windows.Forms.Guard.ComboBoxGuard cboCampo;
+        public System.Uteis.ComboBoxGuard cboCampo;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnIntervaloCampos = new System.Windows.Forms.Guard.PanelGuard(this.components);
+            this.pnIntervaloCampos = new System.Uteis.PanelGuard(this.components);
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
             this.dtpInicial = new System.Windows.Forms.DateTimePicker();
-            this.lbFinal = new System.Windows.Forms.Guard.LabelGuard();
-            this.lbInicial = new System.Windows.Forms.Guard.LabelGuard();
-            this.pnTitulo = new System.Windows.Forms.Guard.PanelGuard(this.components);
-            this.chkTitulo = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
+            this.lbFinal = new System.Uteis.LabelGuard();
+            this.lbInicial = new System.Uteis.LabelGuard();
+            this.pnTitulo = new System.Uteis.PanelGuard(this.components);
+            this.chkTitulo = new System.Uteis.CheckBoxGuard(this.components);
             this.pnIntervaloCampos.SuspendLayout();
             this.pnTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -135,11 +135,11 @@
 
         #endregion
 
-        public System.Windows.Forms.Guard.PanelGuard pnIntervaloCampos;
-        private System.Windows.Forms.Guard.LabelGuard lbFinal;
-        private System.Windows.Forms.Guard.LabelGuard lbInicial;
-        private System.Windows.Forms.Guard.PanelGuard pnTitulo;
-        public System.Windows.Forms.Guard.CheckBoxGuard chkTitulo;
+        public System.Uteis.PanelGuard pnIntervaloCampos;
+        private System.Uteis.LabelGuard lbFinal;
+        private System.Uteis.LabelGuard lbInicial;
+        private System.Uteis.PanelGuard pnTitulo;
+        public System.Uteis.CheckBoxGuard chkTitulo;
         public System.Windows.Forms.DateTimePicker dtpFinal;
         public System.Windows.Forms.DateTimePicker dtpInicial;
     }

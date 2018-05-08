@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"iButton.ico")]
     public partial class ButtonGuard : Button

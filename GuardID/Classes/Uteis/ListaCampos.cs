@@ -6,10 +6,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.Guard;
+using System.Uteis;
 using Classes.Entity;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\lista.ico")]
     public partial class ListaCampos : UserControl

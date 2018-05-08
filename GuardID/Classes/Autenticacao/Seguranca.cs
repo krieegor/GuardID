@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using Classes.Conexoes;
 
-namespace Classes.Entity
+namespace Classes.Autenticacoes
 {
 	public class Seguranca
     {

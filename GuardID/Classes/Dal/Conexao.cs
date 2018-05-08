@@ -11,7 +11,7 @@ using System.Configuration;
 /// <summary>
 /// Classe para conexão com o Banco de Dados
 /// </summary>
-namespace Classes.Dal
+namespace Classes.Conexoes
 {
     public class Conexao
     {

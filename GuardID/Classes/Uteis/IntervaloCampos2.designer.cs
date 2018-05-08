@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panelGuard1 = new System.Windows.Forms.Guard.PanelGuard(this.components);
+            this.panelGuard1 = new System.Uteis.PanelGuard(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelGuard2 = new System.Windows.Forms.Guard.PanelGuard(this.components);
-            this.chkTitulo = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
-            this.txtFinal = new System.Windows.Forms.Guard.TextBoxGuard();
-            this.labelGuard2 = new System.Windows.Forms.Guard.LabelGuard();
-            this.txtInicial = new System.Windows.Forms.Guard.TextBoxGuard();
-            this.labelGuard1 = new System.Windows.Forms.Guard.LabelGuard();
+            this.panelGuard2 = new System.Uteis.PanelGuard(this.components);
+            this.chkTitulo = new System.Uteis.CheckBoxGuard(this.components);
+            this.txtFinal = new System.Uteis.TextBoxGuard();
+            this.labelGuard2 = new System.Uteis.LabelGuard();
+            this.txtInicial = new System.Uteis.TextBoxGuard();
+            this.labelGuard1 = new System.Uteis.LabelGuard();
             this.panelGuard1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,8 +102,8 @@
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(56, 21);
             this.txtFinal.TabIndex = 8;
-            this.txtFinal.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtFinal.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Geral;
+            this.txtFinal.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtFinal.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Geral;
             // 
             // labelGuard2
             // 
@@ -125,8 +125,8 @@
             this.txtInicial.Name = "txtInicial";
             this.txtInicial.Size = new System.Drawing.Size(56, 21);
             this.txtInicial.TabIndex = 6;
-            this.txtInicial.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtInicial.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Geral;
+            this.txtInicial.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtInicial.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Geral;
             this.txtInicial.TextChanged += new System.EventHandler(this.txtInicial_TextChanged);
             this.txtInicial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInicial_KeyDown);
             this.txtInicial.Leave += new System.EventHandler(this.txtInicial_Leave);
@@ -158,13 +158,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Guard.PanelGuard panelGuard1;
-        private System.Windows.Forms.Guard.LabelGuard labelGuard2;
-        private System.Windows.Forms.Guard.LabelGuard labelGuard1;
-        public System.Windows.Forms.Guard.TextBoxGuard txtFinal;
-        public System.Windows.Forms.Guard.TextBoxGuard txtInicial;
+        private System.Uteis.PanelGuard panelGuard1;
+        private System.Uteis.LabelGuard labelGuard2;
+        private System.Uteis.LabelGuard labelGuard1;
+        public System.Uteis.TextBoxGuard txtFinal;
+        public System.Uteis.TextBoxGuard txtInicial;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Guard.PanelGuard panelGuard2;
-        public System.Windows.Forms.Guard.CheckBoxGuard chkTitulo;
+        private System.Uteis.PanelGuard panelGuard2;
+        public System.Uteis.CheckBoxGuard chkTitulo;
     }
 }

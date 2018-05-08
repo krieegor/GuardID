@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Classes.Entity;
-using Classes.Dal;
 using System.Data;
-using System.Net.Mail;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Data.OracleClient;
+using Classes.Autenticacoes;
+using Classes.Conexoes;
 
 namespace Classes.Uteis
-{       
-    public static class EnviarEmailErro
+{
+	public static class EnviarEmailErro
     {
         /// <summary>
         /// Envia email de erro - pelo codigo do sistema
@@ -366,7 +365,7 @@ namespace Classes.Uteis
         //    string exe_local = @"C:\Sistemas\EnviaEmail2\EnviaEmail.exe";
         //    System.IO.Directory.CreateDirectory(@"C:\Sistemas\EnviaEmail2");
         //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\EnviaEmail.exe", exe_local, true);
-        //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\Classes.Dal.dll", @"C:\Sistemas\EnviaEmail2\Classes.Dal.dll", true);
+        //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\ClassesConexoes.dll", @"C:\Sistemas\EnviaEmail2\ClassesConexoes.dll", true);
         //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\Classes.Uteis.dll", @"C:\Sistemas\EnviaEmail2\Classes.Uteis.dll", true);
 
         //    if (System.IO.File.Exists(exe_local))

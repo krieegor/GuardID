@@ -141,180 +141,177 @@
     </Compile>
     <Compile Include="Diversos.cs" />
     <Compile Include="EnviarEmailErro.cs" />
-    <Compile Include="ExecutaveisFoxPro.cs" />
-    <Compile Include="Form.cs">
+    <Compile Include="Formularios\FormBasic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form.Designer.cs">
-      <DependentUpon>Form.cs</DependentUpon>
+    <Compile Include="Formularios\FormBasic.Designer.cs">
+      <DependentUpon>FormBasic.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAssistenteCadastro.cs">
+    <Compile Include="Formularios\FormAssistenteCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAssistenteCadastro.Designer.cs">
+    <Compile Include="Formularios\FormAssistenteCadastro.Designer.cs">
       <DependentUpon>FormAssistenteCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAssistenteGenerico.cs">
+    <Compile Include="Formularios\FormAssistenteGenerico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAssistenteGenerico.Designer.cs">
+    <Compile Include="Formularios\FormAssistenteGenerico.Designer.cs">
       <DependentUpon>FormAssistenteGenerico.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAssistenteRelatorio.cs">
+    <Compile Include="Formularios\FormAssistenteRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAssistenteRelatorio.Designer.cs">
+    <Compile Include="Formularios\FormAssistenteRelatorio.Designer.cs">
       <DependentUpon>FormAssistenteRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="FormataString.cs" />
-    <Compile Include="FormBusca.cs">
+    <Compile Include="Formularios\FormBusca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBusca.Designer.cs">
+    <Compile Include="Formularios\FormBusca.Designer.cs">
       <DependentUpon>FormBusca.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBuscaPaginacao.cs">
+    <Compile Include="Formularios\FormBuscaPaginacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBuscaPaginacao.Designer.cs">
+    <Compile Include="Formularios\FormBuscaPaginacao.Designer.cs">
       <DependentUpon>FormBuscaPaginacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastro.cs">
+    <Compile Include="Formularios\FormCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastro.Designer.cs">
+    <Compile Include="Formularios\FormCadastro.Designer.cs">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroRapido.cs">
+    <Compile Include="Formularios\FormCadastroRapido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroRapido.Designer.cs">
+    <Compile Include="Formularios\FormCadastroRapido.Designer.cs">
       <DependentUpon>FormCadastroRapido.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsulta.cs">
+    <Compile Include="Formularios\FormConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsulta.Designer.cs">
+    <Compile Include="Formularios\FormConsulta.Designer.cs">
       <DependentUpon>FormConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFundoPrincipal.cs">
+    <Compile Include="Formularios\FormFundoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFundoPrincipal.designer.cs">
+    <Compile Include="Formularios\FormFundoPrincipal.designer.cs">
       <DependentUpon>FormFundoPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInputBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormInputBox.designer.cs">
+    <Compile Include="Formularios\FormInputBox.cs" />
+    <Compile Include="Formularios\FormInputBox.designer.cs">
       <DependentUpon>FormInputBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Formularios\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.designer.cs">
+    <Compile Include="Formularios\FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLoginDesenvolvedor.cs">
+    <Compile Include="Formularios\FormLoginDesenvolvedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoginDesenvolvedor.designer.cs">
+    <Compile Include="Formularios\FormLoginDesenvolvedor.designer.cs">
       <DependentUpon>FormLoginDesenvolvedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMensagem.cs">
+    <Compile Include="Formularios\FormMensagem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMensagem.Designer.cs">
+    <Compile Include="Formularios\FormMensagem.Designer.cs">
       <DependentUpon>FormMensagem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProcesso.cs">
+    <Compile Include="Formularios\FormProcesso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProcesso.Designer.cs">
+    <Compile Include="Formularios\FormProcesso.Designer.cs">
       <DependentUpon>FormProcesso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorio.cs">
+    <Compile Include="Formularios\FormRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorio.Designer.cs">
+    <Compile Include="Formularios\FormRelatorio.Designer.cs">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioCompleto.cs">
+    <Compile Include="Formularios\FormRelatorioCompleto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioCompleto.Designer.cs">
+    <Compile Include="Formularios\FormRelatorioCompleto.Designer.cs">
       <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioCompletoCrystal.cs">
+    <Compile Include="Formularios\FormRelatorioCompletoCrystal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioCompletoCrystal.Designer.cs">
+    <Compile Include="Formularios\FormRelatorioCompletoCrystal.Designer.cs">
       <DependentUpon>FormRelatorioCompletoCrystal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioCrystal.cs">
+    <Compile Include="Formularios\FormRelatorioCrystal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioCrystal.Designer.cs">
+    <Compile Include="Formularios\FormRelatorioCrystal.Designer.cs">
       <DependentUpon>FormRelatorioCrystal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioOld.cs">
+    <Compile Include="Formularios\FormRelatorioOld.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioOld.Designer.cs">
+    <Compile Include="Formularios\FormRelatorioOld.Designer.cs">
       <DependentUpon>FormRelatorioOld.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAguarde.cs">
+    <Compile Include="Formularios\frmAguarde.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAguarde.designer.cs">
+    <Compile Include="Formularios\frmAguarde.designer.cs">
       <DependentUpon>frmAguarde.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAuditoriaFormulario.cs">
+    <Compile Include="Formularios\frmAuditoriaFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAuditoriaFormulario.designer.cs">
+    <Compile Include="Formularios\frmAuditoriaFormulario.designer.cs">
       <DependentUpon>frmAuditoriaFormulario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscaInformacaoGrid.cs">
+    <Compile Include="Formularios\frmBuscaInformacaoGrid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscaInformacaoGrid.designer.cs">
+    <Compile Include="Formularios\frmBuscaInformacaoGrid.designer.cs">
       <DependentUpon>frmBuscaInformacaoGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmExtratorDados.cs">
+    <Compile Include="Formularios\frmExtratorDados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmExtratorDados.Designer.cs">
+    <Compile Include="Formularios\frmExtratorDados.Designer.cs">
       <DependentUpon>frmExtratorDados.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmExtratorDadosConsulta.cs">
+    <Compile Include="Formularios\frmExtratorDadosConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmExtratorDadosConsulta.Designer.cs">
+    <Compile Include="Formularios\frmExtratorDadosConsulta.Designer.cs">
       <DependentUpon>frmExtratorDadosConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManutencaoPermissoes.cs">
+    <Compile Include="Formularios\frmManutencaoPermissoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManutencaoPermissoes.Designer.cs">
+    <Compile Include="Formularios\frmManutencaoPermissoes.Designer.cs">
       <DependentUpon>frmManutencaoPermissoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManutencaoPermissoesEditarGrupo.cs">
+    <Compile Include="Formularios\frmManutencaoPermissoesEditarGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManutencaoPermissoesEditarGrupo.Designer.cs">
+    <Compile Include="Formularios\frmManutencaoPermissoesEditarGrupo.Designer.cs">
       <DependentUpon>frmManutencaoPermissoesEditarGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOpcoes.cs">
+    <Compile Include="Formularios\frmOpcoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOpcoes.Designer.cs">
+    <Compile Include="Formularios\frmOpcoes.Designer.cs">
       <DependentUpon>frmOpcoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOrdenacaoGrid.cs">
+    <Compile Include="Formularios\frmOrdenacaoGrid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrdenacaoGrid.designer.cs">
+    <Compile Include="Formularios\frmOrdenacaoGrid.designer.cs">
       <DependentUpon>frmOrdenacaoGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="GerarDocumentoWord.cs" />
@@ -489,99 +486,99 @@
     <EmbeddedResource Include="Competencia.resx">
       <DependentUpon>Competencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form.resx">
-      <DependentUpon>Form.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FormBasic.resx">
+      <DependentUpon>FormBasic.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAssistenteCadastro.resx">
+    <EmbeddedResource Include="Formularios\FormAssistenteCadastro.resx">
       <DependentUpon>FormAssistenteCadastro.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAssistenteGenerico.resx">
+    <EmbeddedResource Include="Formularios\FormAssistenteGenerico.resx">
       <DependentUpon>FormAssistenteGenerico.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAssistenteRelatorio.resx">
+    <EmbeddedResource Include="Formularios\FormAssistenteRelatorio.resx">
       <DependentUpon>FormAssistenteRelatorio.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBusca.resx">
+    <EmbeddedResource Include="Formularios\FormBusca.resx">
       <DependentUpon>FormBusca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscaPaginacao.resx">
+    <EmbeddedResource Include="Formularios\FormBuscaPaginacao.resx">
       <DependentUpon>FormBuscaPaginacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastro.resx">
+    <EmbeddedResource Include="Formularios\FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroRapido.resx">
+    <EmbeddedResource Include="Formularios\FormCadastroRapido.resx">
       <DependentUpon>FormCadastroRapido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsulta.resx">
+    <EmbeddedResource Include="Formularios\FormConsulta.resx">
       <DependentUpon>FormConsulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFundoPrincipal.resx">
+    <EmbeddedResource Include="Formularios\FormFundoPrincipal.resx">
       <DependentUpon>FormFundoPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInputBox.resx">
+    <EmbeddedResource Include="Formularios\FormInputBox.resx">
       <DependentUpon>FormInputBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Formularios\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoginDesenvolvedor.resx">
+    <EmbeddedResource Include="Formularios\FormLoginDesenvolvedor.resx">
       <DependentUpon>FormLoginDesenvolvedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMensagem.resx">
+    <EmbeddedResource Include="Formularios\FormMensagem.resx">
       <DependentUpon>FormMensagem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProcesso.resx">
+    <EmbeddedResource Include="Formularios\FormProcesso.resx">
       <DependentUpon>FormProcesso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorio.resx">
+    <EmbeddedResource Include="Formularios\FormRelatorio.resx">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioCompleto.resx">
+    <EmbeddedResource Include="Formularios\FormRelatorioCompleto.resx">
       <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioCompletoCrystal.resx">
+    <EmbeddedResource Include="Formularios\FormRelatorioCompletoCrystal.resx">
       <DependentUpon>FormRelatorioCompletoCrystal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioCrystal.resx">
+    <EmbeddedResource Include="Formularios\FormRelatorioCrystal.resx">
       <DependentUpon>FormRelatorioCrystal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioOld.resx">
+    <EmbeddedResource Include="Formularios\FormRelatorioOld.resx">
       <DependentUpon>FormRelatorioOld.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAguarde.resx">
+    <EmbeddedResource Include="Formularios\frmAguarde.resx">
       <DependentUpon>frmAguarde.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAuditoriaFormulario.resx">
+    <EmbeddedResource Include="Formularios\frmAuditoriaFormulario.resx">
       <DependentUpon>frmAuditoriaFormulario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscaInformacaoGrid.resx">
+    <EmbeddedResource Include="Formularios\frmBuscaInformacaoGrid.resx">
       <DependentUpon>frmBuscaInformacaoGrid.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmExtratorDados.resx">
+    <EmbeddedResource Include="Formularios\frmExtratorDados.resx">
       <DependentUpon>frmExtratorDados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmExtratorDadosConsulta.resx">
+    <EmbeddedResource Include="Formularios\frmExtratorDadosConsulta.resx">
       <DependentUpon>frmExtratorDadosConsulta.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManutencaoPermissoes.resx">
+    <EmbeddedResource Include="Formularios\frmManutencaoPermissoes.resx">
       <DependentUpon>frmManutencaoPermissoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManutencaoPermissoesEditarGrupo.resx">
+    <EmbeddedResource Include="Formularios\frmManutencaoPermissoesEditarGrupo.resx">
       <DependentUpon>frmManutencaoPermissoesEditarGrupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpcoes.resx">
+    <EmbeddedResource Include="Formularios\frmOpcoes.resx">
       <DependentUpon>frmOpcoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrdenacaoGrid.resx">
+    <EmbeddedResource Include="Formularios\frmOrdenacaoGrid.resx">
       <DependentUpon>frmOrdenacaoGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntervaloCampoData.resx">
@@ -624,7 +621,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FW_32_32.ico" />
+    <ProjectReference Include="..\Autenticacao\Autenticacoes.csproj">
+      <Project>{38e2bd9b-e4e3-4d5d-b530-6fabd6d0078c}</Project>
+      <Name>Autenticacoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dal\Conexoes.csproj">
+      <Project>{66b4676b-9bd7-475e-8b26-f4e1866f67cd}</Project>
+      <Name>Conexoes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

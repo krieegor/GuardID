@@ -4,8 +4,10 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Data.EntityClient;
+using Classes.Conexoes;
 
-namespace Classes.Entity
+namespace Classes.Autenticacoes
 {
 	public static class Globals
     {

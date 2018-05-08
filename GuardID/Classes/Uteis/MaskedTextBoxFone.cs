@@ -7,10 +7,10 @@ using System.Text;
 using System.Drawing;
 using Classes.Entity;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iMasktextbox.ico")]
-    public partial class MaskedTextBoxFoneGuard : MaskedTextBoxGuard
+    public partial class MaskedTextBoxFoneGuard : MaskedTextBoxDataGuard
     {
         // DDDs que necessita de nove digitos (para celular)
         // 11, 12, 13, 14, 15, 16, 17, 18, 19 - São Paulo
@@ -56,22 +56,22 @@ namespace System.Windows.Forms.Guard
         /// Nome da coluna no DataTable, utilizado pelo método PreencherCampos(ControlCollection controls, DataTable dtDados)
         /// </summary>
         private string _NomeCampoDadosDataTable;
-#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.NomeCampoDadosDataTable" oculta o membro herdado "MaskedTextBoxGuard.NomeCampoDadosDataTable". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.NomeCampoDadosDataTable" oculta o membro herdado "MaskedTextBoxDataGuard.NomeCampoDadosDataTable". Use a nova palavra-chave se foi pretendido ocultar.
         public string NomeCampoDadosDataTable
-#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.NomeCampoDadosDataTable" oculta o membro herdado "MaskedTextBoxGuard.NomeCampoDadosDataTable". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.NomeCampoDadosDataTable" oculta o membro herdado "MaskedTextBoxDataGuard.NomeCampoDadosDataTable". Use a nova palavra-chave se foi pretendido ocultar.
         {
             get { return _NomeCampoDadosDataTable; }
             set
             { _NomeCampoDadosDataTable = value; }
         }
 
-#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.CTipoCampo" oculta o membro herdado "MaskedTextBoxGuard.CTipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.CTipoCampo" oculta o membro herdado "MaskedTextBoxDataGuard.CTipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
         public enum CTipoCampo { Normal, Chave, ChaveAutoIncremento, Obrigatorio };
-#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.CTipoCampo" oculta o membro herdado "MaskedTextBoxGuard.CTipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.CTipoCampo" oculta o membro herdado "MaskedTextBoxDataGuard.CTipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
         private CTipoCampo _tipoCampo = CTipoCampo.Normal;
-#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.TipoCampo" oculta o membro herdado "MaskedTextBoxGuard.TipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.TipoCampo" oculta o membro herdado "MaskedTextBoxDataGuard.TipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
         public CTipoCampo TipoCampo
-#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.TipoCampo" oculta o membro herdado "MaskedTextBoxGuard.TipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.TipoCampo" oculta o membro herdado "MaskedTextBoxDataGuard.TipoCampo". Use a nova palavra-chave se foi pretendido ocultar.
         {
             get { return _tipoCampo; }
             set
@@ -91,9 +91,9 @@ namespace System.Windows.Forms.Guard
 
         private bool _limpaCampo = true;
 
-#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.LimpaCampo" oculta o membro herdado "MaskedTextBoxGuard.LimpaCampo". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.LimpaCampo" oculta o membro herdado "MaskedTextBoxDataGuard.LimpaCampo". Use a nova palavra-chave se foi pretendido ocultar.
         public bool LimpaCampo
-#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.LimpaCampo" oculta o membro herdado "MaskedTextBoxGuard.LimpaCampo". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.LimpaCampo" oculta o membro herdado "MaskedTextBoxDataGuard.LimpaCampo". Use a nova palavra-chave se foi pretendido ocultar.
         {
             get { return _limpaCampo; }
             set { _limpaCampo = value; }
@@ -137,9 +137,9 @@ namespace System.Windows.Forms.Guard
             ExecutaTabPressionaEnter(e);
         }
 
-#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.ValidaMask()" oculta o membro herdado "MaskedTextBoxGuard.ValidaMask()". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning disable CS0108 // "MaskedTextBoxFoneGuard.ValidaMask()" oculta o membro herdado "MaskedTextBoxDataGuard.ValidaMask()". Use a nova palavra-chave se foi pretendido ocultar.
         protected void ValidaMask()
-#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.ValidaMask()" oculta o membro herdado "MaskedTextBoxGuard.ValidaMask()". Use a nova palavra-chave se foi pretendido ocultar.
+#pragma warning restore CS0108 // "MaskedTextBoxFoneGuard.ValidaMask()" oculta o membro herdado "MaskedTextBoxDataGuard.ValidaMask()". Use a nova palavra-chave se foi pretendido ocultar.
         {
             var Digitos = "0123456789";
             if (!string.IsNullOrEmpty(base.Text))

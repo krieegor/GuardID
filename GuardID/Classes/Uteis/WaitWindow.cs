@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     public static class WaitWindow
     {

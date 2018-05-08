@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iGroupbox.ico")]
     public partial class GroupBoxGuard : GroupBox

@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Classes.Dal;
+using ClassesConexoes;
 using Classes.Entity;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iTextbox.ico")]
     public partial class TextBoxGuard : TextBox

@@ -5,8 +5,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iMasktextbox.ico")]
     public partial class MaskedTextBoxGuard : MaskedTextBox

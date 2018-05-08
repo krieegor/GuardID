@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Classes.Entity;
 using System.IO;
-using System.Diagnostics;
 using System.Windows.Forms;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
 using System.Runtime.InteropServices;
 
 namespace Classes.Uteis
 {
-    public static class Arquivos
+	public static class Arquivos
     {
         public static int GetQuantidadePaginasPDF(string caminhoPDF)
         {

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Classes.Autenticacoes;
+using Classes.Conexoes;
 using System.Data;
 using System.IO;
-using System.Data.OracleClient;
-using Classes.Dal;
-using Classes.Entity;
 
 namespace Classes.Uteis
 {
-    public static class CriaArquivoBlob
+	public static class CriaArquivoBlob
     {
         /// <summary>
         /// Lê um campo BLOB no banco e recria o arquivo na máquina do usuário

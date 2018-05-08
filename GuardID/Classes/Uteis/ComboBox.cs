@@ -5,8 +5,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [ToolboxBitmap(@"iCombobox.ico")]
     public partial class ComboBoxGuard : ComboBox

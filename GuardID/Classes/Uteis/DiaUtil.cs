@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Text;
-using Classes.Dal;
-using Classes.Entity;
 
 namespace Classes.Uteis
 {
-    // Classe para verificar se um dia é útil ou não.
-    public static class DiaUtil
+	// Classe para verificar se um dia é útil ou não.
+	public static class DiaUtil
     {
        // Método para fazer a verificação se o dia é sábado, domingo ou feriado
         public static bool diaUtil(DateTime dt)

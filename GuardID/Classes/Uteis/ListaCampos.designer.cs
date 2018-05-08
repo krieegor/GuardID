@@ -1,4 +1,4 @@
-﻿namespace System.Windows.Forms.Guard
+﻿namespace System.Uteis
 {
     partial class ListaCampos
     {
@@ -33,9 +33,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.listGeral = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtCampo = new System.Windows.Forms.Guard.TextBoxGuard();
+            this.txtCampo = new System.Uteis.TextBoxGuard();
             this.pnchkChek = new System.Windows.Forms.Panel();
-            this.lbListaCampos = new System.Windows.Forms.Guard.LabelGuard();
+            this.lbListaCampos = new System.Uteis.LabelGuard();
             this.chkListaCampos = new System.Windows.Forms.CheckBox();
             this.tltInformação = new System.Windows.Forms.ToolTip(this.components);
             this.pnListaCampos.SuspendLayout();
@@ -104,8 +104,8 @@
             this.txtCampo.ParteInteira = 0;
             this.txtCampo.Size = new System.Drawing.Size(63, 21);
             this.txtCampo.TabIndex = 4;
-            this.txtCampo.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtCampo.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Geral;
+            this.txtCampo.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtCampo.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Geral;
             this.tltInformação.SetToolTip(this.txtCampo, "Pressione(F3): para pesquisar");
             this.txtCampo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCampo_KeyDown);
             // 
@@ -172,13 +172,13 @@
         #endregion
 
         public System.Windows.Forms.Panel pnListaCampos;
-        public System.Windows.Forms.Guard.LabelGuard lbListaCampos;
+        public System.Uteis.LabelGuard lbListaCampos;
         public System.Windows.Forms.CheckBox chkListaCampos;
         public System.Windows.Forms.Panel pnchkChek;
         private System.Windows.Forms.ToolTip tltInformação;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.ListBox listGeral;
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Guard.TextBoxGuard txtCampo;
+        public System.Uteis.TextBoxGuard txtCampo;
     }
 }

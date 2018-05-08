@@ -1,4 +1,4 @@
-﻿namespace System.Windows.Forms.Guard
+﻿namespace System.Uteis
 {
     partial class CheckBoxGuard
     {

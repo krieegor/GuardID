@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using Classes.Uteis;
 
 namespace Classes.Uteis
 {
@@ -63,7 +64,7 @@ namespace Classes.Uteis
 
                 string usuario = Globals.Usuario.ToString();
                 string senha = Globals.Login;
-                string conexao = Globals.Conexao.Equals("ACAD_TESTE") ? "DBTESTE" : Globals.Conexao;
+                string conexao = Globals.Conexao.Equals("TESTE") ? "DBTESTE" : Globals.Conexao;
                 string parametros = usuario + " " + senha + " " + conexao + " " + comandoExecFox;
 
                 System.Diagnostics.Process process = System.Diagnostics.Process.Start(executavel.getCaminhoLocal(), parametros);

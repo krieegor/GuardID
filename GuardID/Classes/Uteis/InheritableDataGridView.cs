@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms.Design;
 using System.ComponentModel;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     [Designer(typeof(ControlDesigner))]
     public class InheritableDataGridView : DataGridViewGuard

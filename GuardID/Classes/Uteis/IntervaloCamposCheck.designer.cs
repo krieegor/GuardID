@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panelGuard1 = new System.Windows.Forms.Guard.PanelGuard(this.components);
+            this.panelGuard1 = new System.Uteis.PanelGuard(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
-            this.chkNao = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
+            this.chkNao = new System.Uteis.CheckBoxGuard(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chkSim = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
-            this.panelGuard3 = new System.Windows.Forms.Guard.PanelGuard(this.components);
+            this.chkSim = new System.Uteis.CheckBoxGuard(this.components);
+            this.panelGuard3 = new System.Uteis.PanelGuard(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTitulo = new System.Windows.Forms.Guard.LabelGuard();
-            this.panelGuard2 = new System.Windows.Forms.Guard.PanelGuard(this.components);
+            this.lbTitulo = new System.Uteis.LabelGuard();
+            this.panelGuard2 = new System.Uteis.PanelGuard(this.components);
             this.panelGuard1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -166,15 +166,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Guard.PanelGuard panelGuard1;
+        private System.Uteis.PanelGuard panelGuard1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Guard.PanelGuard panelGuard2;
+        private System.Uteis.PanelGuard panelGuard2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Guard.PanelGuard panelGuard3;
-        private System.Windows.Forms.Guard.LabelGuard lbTitulo;
-        public System.Windows.Forms.Guard.CheckBoxGuard chkSim;
-        public System.Windows.Forms.Guard.CheckBoxGuard chkNao;
+        private System.Uteis.PanelGuard panelGuard3;
+        private System.Uteis.LabelGuard lbTitulo;
+        public System.Uteis.CheckBoxGuard chkSim;
+        public System.Uteis.CheckBoxGuard chkNao;
 
     }
 }

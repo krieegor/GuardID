@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Classes.Uteis;
 
-namespace System.Windows.Forms.Guard
+namespace System.Uteis
 {
     #region Classe DataGridViewGuard
     [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iDatagrid.ico")]

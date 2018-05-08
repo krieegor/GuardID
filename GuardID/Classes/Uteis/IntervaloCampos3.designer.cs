@@ -1,4 +1,4 @@
-﻿namespace System.Windows.Forms.Guard
+﻿namespace System.Uteis
 {
 	partial class IntervaloCampos3
 	{
@@ -28,17 +28,17 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.lblTitulo = new System.Windows.Forms.Guard.LabelGuard();
+            this.lblTitulo = new System.Uteis.LabelGuard();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lbInicial = new System.Windows.Forms.Guard.LabelGuard();
+            this.lbInicial = new System.Uteis.LabelGuard();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtInicial = new System.Windows.Forms.Guard.TextBoxGuard();
+            this.txtInicial = new System.Uteis.TextBoxGuard();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.lbFinal = new System.Windows.Forms.Guard.LabelGuard();
+            this.lbFinal = new System.Uteis.LabelGuard();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtFinal = new System.Windows.Forms.Guard.TextBoxGuard();
+            this.txtFinal = new System.Uteis.TextBoxGuard();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -107,8 +107,8 @@
             this.txtInicial.Name = "txtInicial";
             this.txtInicial.Size = new System.Drawing.Size(79, 21);
             this.txtInicial.TabIndex = 2;
-            this.txtInicial.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtInicial.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Geral;
+            this.txtInicial.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtInicial.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Geral;
             this.txtInicial.Leave += new System.EventHandler(this.txtInicial_Leave);
             // 
             // panel7
@@ -160,8 +160,8 @@
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(79, 21);
             this.txtFinal.TabIndex = 2;
-            this.txtFinal.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtFinal.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Geral;
+            this.txtFinal.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtFinal.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Geral;
             // 
             // panel8
             // 

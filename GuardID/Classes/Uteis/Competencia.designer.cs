@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
+            this.lblTitulo = new System.Uteis.CheckBoxGuard(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtMes = new System.Windows.Forms.Guard.TextBoxGuard();
+            this.txtMes = new System.Uteis.TextBoxGuard();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.lbFinal = new System.Windows.Forms.Guard.LabelGuard();
+            this.lbFinal = new System.Uteis.LabelGuard();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtAno = new System.Windows.Forms.Guard.TextBoxGuard();
+            this.txtAno = new System.Uteis.TextBoxGuard();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lbInicial = new System.Windows.Forms.Guard.LabelGuard();
+            this.lbInicial = new System.Uteis.LabelGuard();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -118,8 +118,8 @@
             this.txtMes.ParteInteira = 0;
             this.txtMes.Size = new System.Drawing.Size(81, 21);
             this.txtMes.TabIndex = 2;
-            this.txtMes.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtMes.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Numerico;
+            this.txtMes.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtMes.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Numerico;
             this.txtMes.Leave += new System.EventHandler(this.txtMes_Leave);
             // 
             // panel10
@@ -179,8 +179,8 @@
             this.txtAno.ParteInteira = 0;
             this.txtAno.Size = new System.Drawing.Size(81, 21);
             this.txtAno.TabIndex = 2;
-            this.txtAno.TipoCampo = System.Windows.Forms.Guard.TextBoxGuard.CTipoCampo.Normal;
-            this.txtAno.TipoValor = System.Windows.Forms.Guard.TextBoxGuard.CTipoValor.Numerico;
+            this.txtAno.TipoCampo = System.Uteis.TextBoxGuard.CTipoCampo.Normal;
+            this.txtAno.TipoValor = System.Uteis.TextBoxGuard.CTipoValor.Numerico;
             // 
             // panel9
             // 
@@ -264,10 +264,10 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Guard.LabelGuard lbInicial;
-        private System.Windows.Forms.Guard.LabelGuard lbFinal;
-        public System.Windows.Forms.Guard.TextBoxGuard txtMes;
-        public System.Windows.Forms.Guard.TextBoxGuard txtAno;
-        public System.Windows.Forms.Guard.CheckBoxGuard lblTitulo;
+        private System.Uteis.LabelGuard lbInicial;
+        private System.Uteis.LabelGuard lbFinal;
+        public System.Uteis.TextBoxGuard txtMes;
+        public System.Uteis.TextBoxGuard txtAno;
+        public System.Uteis.CheckBoxGuard lblTitulo;
     }
 }

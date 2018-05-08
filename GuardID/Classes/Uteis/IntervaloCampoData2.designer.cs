@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnIntervaloCampos = new System.Windows.Forms.Guard.PanelGuard(this.components);
-            this.txtDtFinal = new System.Windows.Forms.Guard.MaskedTextBoxDataGuard(this.components);
-            this.txtDtInicial = new System.Windows.Forms.Guard.MaskedTextBoxDataGuard(this.components);
-            this.lbFinal = new System.Windows.Forms.Guard.LabelGuard();
-            this.lbInicial = new System.Windows.Forms.Guard.LabelGuard();
-            this.pnTitulo = new System.Windows.Forms.Guard.PanelGuard(this.components);
-            this.chkTitulo = new System.Windows.Forms.Guard.CheckBoxGuard(this.components);
+            this.pnIntervaloCampos = new System.Uteis.PanelGuard(this.components);
+            this.txtDtFinal = new System.Uteis.MaskedTextBoxDataGuard(this.components);
+            this.txtDtInicial = new System.Uteis.MaskedTextBoxDataGuard(this.components);
+            this.lbFinal = new System.Uteis.LabelGuard();
+            this.lbInicial = new System.Uteis.LabelGuard();
+            this.pnTitulo = new System.Uteis.PanelGuard(this.components);
+            this.chkTitulo = new System.Uteis.CheckBoxGuard(this.components);
             this.pnIntervaloCampos.SuspendLayout();
             this.pnTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.txtDtFinal.Name = "txtDtFinal";
             this.txtDtFinal.Size = new System.Drawing.Size(75, 21);
             this.txtDtFinal.TabIndex = 6;
-            this.txtDtFinal.TipoCampo = System.Windows.Forms.Guard.MaskedTextBoxDataGuard.CTipoCampo.Normal;
+            this.txtDtFinal.TipoCampo = System.Uteis.MaskedTextBoxDataGuard.CTipoCampo.Normal;
             // 
             // txtDtInicial
             // 
@@ -79,7 +79,7 @@
             this.txtDtInicial.Name = "txtDtInicial";
             this.txtDtInicial.Size = new System.Drawing.Size(75, 21);
             this.txtDtInicial.TabIndex = 5;
-            this.txtDtInicial.TipoCampo = System.Windows.Forms.Guard.MaskedTextBoxDataGuard.CTipoCampo.Normal;
+            this.txtDtInicial.TipoCampo = System.Uteis.MaskedTextBoxDataGuard.CTipoCampo.Normal;
             this.txtDtInicial.Leave += new System.EventHandler(this.txtDtInicial_Leave);
             // 
             // lbFinal
@@ -143,12 +143,12 @@
 
         #endregion
 
-        public System.Windows.Forms.Guard.PanelGuard pnIntervaloCampos;
-        private System.Windows.Forms.Guard.LabelGuard lbFinal;
-        private System.Windows.Forms.Guard.LabelGuard lbInicial;
-        private System.Windows.Forms.Guard.PanelGuard pnTitulo;
-        public System.Windows.Forms.Guard.CheckBoxGuard chkTitulo;
-        public System.Windows.Forms.Guard.MaskedTextBoxDataGuard txtDtFinal;
-        public System.Windows.Forms.Guard.MaskedTextBoxDataGuard txtDtInicial;
+        public System.Uteis.PanelGuard pnIntervaloCampos;
+        private System.Uteis.LabelGuard lbFinal;
+        private System.Uteis.LabelGuard lbInicial;
+        private System.Uteis.PanelGuard pnTitulo;
+        public System.Uteis.CheckBoxGuard chkTitulo;
+        public System.Uteis.MaskedTextBoxDataGuard txtDtFinal;
+        public System.Uteis.MaskedTextBoxDataGuard txtDtInicial;
     }
 }
