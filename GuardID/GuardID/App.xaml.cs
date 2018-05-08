@@ -13,7 +13,7 @@ namespace GuardID
 		{
 			InitializeComponent();
 
-			MainPage = new GuardID.MainPage();
+			MainPage = new NavigationPage(new StartPage());
 		}
 
 		protected override void OnStart ()

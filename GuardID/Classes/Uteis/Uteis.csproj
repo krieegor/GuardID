@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{469A3BA4-CCBE-4786-B078-50220FCC776E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Classes.Uteis</RootNamespace>
+    <AssemblyName>Classes.Uteis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>S:\Sistemas dotNet\Classes\DLLs que faltam no VS 2013\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbriFormularioDinamicamente.cs" />
+    <Compile Include="Arquivos.cs" />
+    <Compile Include="Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Button.Designer.cs">
+      <DependentUpon>Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBox.Designer.cs">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBox.Designer.cs">
+      <DependentUpon>ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxFiltro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboBoxFiltro.designer.cs">
+      <DependentUpon>ComboBoxFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComparaString.cs" />
+    <Compile Include="Competencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Competencia.designer.cs">
+      <DependentUpon>Competencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConverteDocumentoWordPDF.cs" />
+    <Compile Include="ConvertListToDataTable.cs" />
+    <Compile Include="ConvertString.cs" />
+    <Compile Include="CriaArquivoBlob.cs" />
+    <Compile Include="CriaArquivoTxt.cs" />
+    <Compile Include="DataExtenso.cs" />
+    <Compile Include="DataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridView.Designer.cs">
+      <DependentUpon>DataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DateTimePicker.Designer.cs">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diversos.cs" />
+    <Compile Include="EnviarEmailErro.cs" />
+    <Compile Include="ExecutaveisFoxPro.cs" />
+    <Compile Include="Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssistenteCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssistenteCadastro.Designer.cs">
+      <DependentUpon>FormAssistenteCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssistenteGenerico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssistenteGenerico.Designer.cs">
+      <DependentUpon>FormAssistenteGenerico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssistenteRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssistenteRelatorio.Designer.cs">
+      <DependentUpon>FormAssistenteRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormataString.cs" />
+    <Compile Include="FormBusca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBusca.Designer.cs">
+      <DependentUpon>FormBusca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscaPaginacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscaPaginacao.Designer.cs">
+      <DependentUpon>FormBuscaPaginacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastro.Designer.cs">
+      <DependentUpon>FormCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroRapido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroRapido.Designer.cs">
+      <DependentUpon>FormCadastroRapido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsulta.Designer.cs">
+      <DependentUpon>FormConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFundoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFundoPrincipal.designer.cs">
+      <DependentUpon>FormFundoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInputBox.designer.cs">
+      <DependentUpon>FormInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginDesenvolvedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginDesenvolvedor.designer.cs">
+      <DependentUpon>FormLoginDesenvolvedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMensagem.Designer.cs">
+      <DependentUpon>FormMensagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesso.Designer.cs">
+      <DependentUpon>FormProcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorio.Designer.cs">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioCompleto.Designer.cs">
+      <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioCompletoCrystal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioCompletoCrystal.Designer.cs">
+      <DependentUpon>FormRelatorioCompletoCrystal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioCrystal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioCrystal.Designer.cs">
+      <DependentUpon>FormRelatorioCrystal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioOld.Designer.cs">
+      <DependentUpon>FormRelatorioOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAguarde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAguarde.designer.cs">
+      <DependentUpon>frmAguarde.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditoriaFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditoriaFormulario.designer.cs">
+      <DependentUpon>frmAuditoriaFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscaInformacaoGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscaInformacaoGrid.designer.cs">
+      <DependentUpon>frmBuscaInformacaoGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExtratorDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExtratorDados.Designer.cs">
+      <DependentUpon>frmExtratorDados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExtratorDadosConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExtratorDadosConsulta.Designer.cs">
+      <DependentUpon>frmExtratorDadosConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManutencaoPermissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManutencaoPermissoes.Designer.cs">
+      <DependentUpon>frmManutencaoPermissoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManutencaoPermissoesEditarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManutencaoPermissoesEditarGrupo.Designer.cs">
+      <DependentUpon>frmManutencaoPermissoesEditarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpcoes.Designer.cs">
+      <DependentUpon>frmOpcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenacaoGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenacaoGrid.designer.cs">
+      <DependentUpon>frmOrdenacaoGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GerarDocumentoWord.cs" />
+    <Compile Include="GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox.Designer.cs">
+      <DependentUpon>GroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imagens.cs" />
+    <Compile Include="InheritableDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntervaloCampoData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCampoData.designer.cs">
+      <DependentUpon>IntervaloCampoData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervaloCampoData2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCampoData2.designer.cs">
+      <DependentUpon>IntervaloCampoData2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervaloCampos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCampos.designer.cs">
+      <DependentUpon>IntervaloCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervaloCampos2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCampos2.designer.cs">
+      <DependentUpon>IntervaloCampos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervaloCampos3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCampos3.designer.cs">
+      <DependentUpon>IntervaloCampos3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervaloCamposCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCamposCheck.designer.cs">
+      <DependentUpon>IntervaloCamposCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervaloCompetencias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntervaloCompetencias.designer.cs">
+      <DependentUpon>IntervaloCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InverterString.cs" />
+    <Compile Include="DiaUtil.cs" />
+    <Compile Include="EnviarEmail.cs" />
+    <Compile Include="ExportaExcel.cs" />
+    <Compile Include="ImportaExcel.cs" />
+    <Compile Include="ImprimeLPT1.cs" />
+    <Compile Include="Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Label.Designer.cs">
+      <DependentUpon>Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabelGroup.Designer.cs">
+      <DependentUpon>LabelGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCampos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCampos.designer.cs">
+      <DependentUpon>ListaCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListBox.Designer.cs">
+      <DependentUpon>ListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskedTextBox.Designer.cs">
+      <DependentUpon>MaskedTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaskedTextBoxData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskedTextBoxData.Designer.cs">
+      <DependentUpon>MaskedTextBoxData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaskedTextBoxFone.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaskedTextBoxFone.Designer.cs">
+      <DependentUpon>MaskedTextBoxFone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumericUpDown.Designer.cs">
+      <DependentUpon>NumericUpDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumeroExtenso.cs" />
+    <Compile Include="Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RadioButton.Designer.cs">
+      <DependentUpon>RadioButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveCharacterEspecialeAssentuacao.cs" />
+    <Compile Include="ReportUteis.cs" />
+    <Compile Include="Resolution.cs" />
+    <Compile Include="TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl.Designer.cs">
+      <DependentUpon>TabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBox.Designer.cs">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Types.cs" />
+    <Compile Include="UltimoDiaMes.cs" />
+    <Compile Include="ValidacaoData.cs" />
+    <Compile Include="ValidaCnpj.cs" />
+    <Compile Include="ValidaCpf.cs" />
+    <Compile Include="ValidaPIS.cs" />
+    <Compile Include="ValidarEmail.cs" />
+    <Compile Include="ValidaStringNumero.cs" />
+    <Compile Include="ValorExtenso.cs" />
+    <Compile Include="VerificarSistema.cs" />
+    <Compile Include="WaitWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ComboBoxFiltro.resx">
+      <DependentUpon>ComboBoxFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Competencia.resx">
+      <DependentUpon>Competencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssistenteCadastro.resx">
+      <DependentUpon>FormAssistenteCadastro.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssistenteGenerico.resx">
+      <DependentUpon>FormAssistenteGenerico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssistenteRelatorio.resx">
+      <DependentUpon>FormAssistenteRelatorio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBusca.resx">
+      <DependentUpon>FormBusca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscaPaginacao.resx">
+      <DependentUpon>FormBuscaPaginacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastro.resx">
+      <DependentUpon>FormCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroRapido.resx">
+      <DependentUpon>FormCadastroRapido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsulta.resx">
+      <DependentUpon>FormConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFundoPrincipal.resx">
+      <DependentUpon>FormFundoPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInputBox.resx">
+      <DependentUpon>FormInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginDesenvolvedor.resx">
+      <DependentUpon>FormLoginDesenvolvedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMensagem.resx">
+      <DependentUpon>FormMensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcesso.resx">
+      <DependentUpon>FormProcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorio.resx">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioCompleto.resx">
+      <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioCompletoCrystal.resx">
+      <DependentUpon>FormRelatorioCompletoCrystal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioCrystal.resx">
+      <DependentUpon>FormRelatorioCrystal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioOld.resx">
+      <DependentUpon>FormRelatorioOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAguarde.resx">
+      <DependentUpon>frmAguarde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditoriaFormulario.resx">
+      <DependentUpon>frmAuditoriaFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscaInformacaoGrid.resx">
+      <DependentUpon>frmBuscaInformacaoGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExtratorDados.resx">
+      <DependentUpon>frmExtratorDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExtratorDadosConsulta.resx">
+      <DependentUpon>frmExtratorDadosConsulta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManutencaoPermissoes.resx">
+      <DependentUpon>frmManutencaoPermissoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManutencaoPermissoesEditarGrupo.resx">
+      <DependentUpon>frmManutencaoPermissoesEditarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpcoes.resx">
+      <DependentUpon>frmOpcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenacaoGrid.resx">
+      <DependentUpon>frmOrdenacaoGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCampoData.resx">
+      <DependentUpon>IntervaloCampoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCampoData2.resx">
+      <DependentUpon>IntervaloCampoData2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCampos.resx">
+      <DependentUpon>IntervaloCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCampos2.resx">
+      <DependentUpon>IntervaloCampos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCampos3.resx">
+      <DependentUpon>IntervaloCampos3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCamposCheck.resx">
+      <DependentUpon>IntervaloCamposCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervaloCompetencias.resx">
+      <DependentUpon>IntervaloCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Label.resx">
+      <DependentUpon>Label.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelGroup.resx">
+      <DependentUpon>LabelGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCampos.resx">
+      <DependentUpon>ListaCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaskedTextBoxFone.resx">
+      <DependentUpon>MaskedTextBoxFone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBox.resx">
+      <DependentUpon>TextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FW_32_32.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
