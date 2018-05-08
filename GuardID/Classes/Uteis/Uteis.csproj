@@ -242,18 +242,6 @@
     <Compile Include="Formularios\FormRelatorioCompleto.Designer.cs">
       <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormRelatorioCompletoCrystal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioCompletoCrystal.Designer.cs">
-      <DependentUpon>FormRelatorioCompletoCrystal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioCrystal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioCrystal.Designer.cs">
-      <DependentUpon>FormRelatorioCrystal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FormRelatorioOld.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -542,12 +530,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormRelatorioCompleto.resx">
       <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormRelatorioCompletoCrystal.resx">
-      <DependentUpon>FormRelatorioCompletoCrystal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormRelatorioCrystal.resx">
-      <DependentUpon>FormRelatorioCrystal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormRelatorioOld.resx">
       <DependentUpon>FormRelatorioOld.cs</DependentUpon>

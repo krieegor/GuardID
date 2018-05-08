@@ -1,25 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-#pragma warning disable CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
-using Microsoft.Reporting.WinForms;
-#pragma warning restore CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
-using Classes.Uteis;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.IO;
-using System.Uteis;
 
 
 namespace System.Uteis
 {
-    public partial class FormRelatorio : FormBasic
+	public partial class FormRelatorio : FormBasic
     {
         public FormRelatorio()
         {

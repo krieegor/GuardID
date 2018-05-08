@@ -1,4 +1,6 @@
-﻿namespace System.Uteis
+﻿using System.Windows.Forms;
+
+namespace System.Uteis
 {
     partial class FormInputBox
     {

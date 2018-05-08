@@ -1,19 +1,14 @@
-﻿using System;
+﻿using Classes.Autenticacoes;
+using Classes.Conexoes;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.Uteis;
-using System.Data.OracleClient;
-using ClassesConexoes;
-using Classes.Entity;
-using System.IO;
 
 namespace System.Uteis
 {
-    public partial class frmManutencaoPermissoes : FormBasic
+	public partial class frmManutencaoPermissoes : FormBasic
     {
         private string _codPrograma;
         public string CodPrograma

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 using System.Reflection;
-using System.Data.Objects.DataClasses;
 
 namespace System.Uteis
 {
-    public partial class FormAssistenteGenerico : FormBasic
+	public partial class FormAssistenteGenerico : FormBasic
     {
         /// <summary>
         /// Type da classe onde se encontra o método que retornará os dados para preencher a grid, com seu respectivo namespace. Por exemplo: base.typeClasse = typeof(SGANomeDoSistema.Bll.BLL);

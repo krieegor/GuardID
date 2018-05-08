@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OracleClient;
-using Classes.Entity;
-using ClassesConexoes;
+using Classes.Autenticacoes;
+using Classes.Conexoes;
 
 namespace System.Uteis
 {
-    public partial class FormBuscaPaginacao : FormBasic
+	public partial class FormBuscaPaginacao : FormBasic
     {
         private string _sql, _sql2;
         private List<OracleParameter> _parametros;

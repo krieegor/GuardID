@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using ClassesConexoes;
-using Classes.Entity;
 using System.Collections;
+using Classes.Autenticacoes;
+using Classes.Conexoes;
 
 namespace System.Uteis
 {
-    public partial class frmAuditoriaFormulario : FormBasic
+	public partial class frmAuditoriaFormulario : FormBasic
     {
         private string _tabela = string.Empty;
         private string _esquema = string.Empty;

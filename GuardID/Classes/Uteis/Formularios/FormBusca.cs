@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using ClassesConexoes;
-using Classes.Entity;
 using Classes.Uteis;
 using System.Data.OracleClient;
-using System.Uteis;
+using Classes.Autenticacoes;
+using Classes.Conexoes;
 
 namespace System.Uteis
 {
-    public partial class FormBusca : FormBasic
+	public partial class FormBusca : FormBasic
     {
         private string _sql;
         private List<OracleParameter> _parametros;
@@ -70,7 +66,7 @@ namespace System.Uteis
         /// <param name="mensagemSemRegistro">Mensagem que aparecerá caso nenhum registro seja executado</param>
         public FormBusca(string sql, List<OracleParameter> parametros, bool autoExecutar, string titulo, string colunaPrincipal, string filtroAutomatico, 
                          string mensagemSemRegistro)
-            : this(sql, parametros, autoExecutar, titulo, colunaPrincipal, filtroAutomatico, mensagemSemRegistro, false, Globals.CBanco.Acad, "")
+            : this(sql, parametros, autoExecutar, titulo, colunaPrincipal, filtroAutomatico, mensagemSemRegistro, false, Globals.CBanco.guardId, "")
         { }
 
         /// <summary>
@@ -85,7 +81,7 @@ namespace System.Uteis
         /// <param name="removerAcentuacao">Remove acentuação do campo selecionado</param>
         public FormBusca(string sql, List<OracleParameter> parametros, bool autoExecutar, string titulo, string colunaPrincipal, string filtroAutomatico, 
                          string mensagemSemRegistro, bool removerAcentuacao)
-            : this(sql, parametros, autoExecutar, titulo, colunaPrincipal, filtroAutomatico, mensagemSemRegistro, removerAcentuacao, Globals.CBanco.Acad, "")
+            : this(sql, parametros, autoExecutar, titulo, colunaPrincipal, filtroAutomatico, mensagemSemRegistro, removerAcentuacao, Globals.CBanco.guardId, "")
         { }
 
         /// <summary>
@@ -116,7 +112,7 @@ namespace System.Uteis
         /// <param name="orderBy">Ordena a Consulta de acordo com as colunas passadas via parametros</param>
         public FormBusca(string sql, List<OracleParameter> parametros, bool autoExecutar, string titulo, string colunaPrincipal, string filtroAutomatico, 
                          string mensagemSemRegistro, bool removerAcentuacao, string orderBy)
-            : this(sql, parametros, autoExecutar, titulo, colunaPrincipal, filtroAutomatico, mensagemSemRegistro, removerAcentuacao, Globals.CBanco.Acad, orderBy)
+            : this(sql, parametros, autoExecutar, titulo, colunaPrincipal, filtroAutomatico, mensagemSemRegistro, removerAcentuacao, Globals.CBanco.guardId, orderBy)
         { }
 
         /// <summary>
@@ -215,12 +211,12 @@ namespace System.Uteis
 
                 if (_removerAcentuacao)
                 {
-                    if (_banco == Globals.CBanco.Acad)
+                    if (_banco == Globals.CBanco.guardId)
                     {
                         filtro = "SGA.F_REMOVE_ACENTO_CEDILHA(" + filtro + ")";
                         filtroEntre = "SGA.F_REMOVE_ACENTO_CEDILHA(" + filtroEntre + ")";
                     }
-                    else if (_banco == Globals.CBanco.Gem)
+                    else if (_banco == Globals.CBanco.guardId)
                     {
                         filtro = "OBVIUS.F_REMOVE_ACENTO_CEDILHA(" + filtro + ")";
                         filtroEntre = "OBVIUS.F_REMOVE_ACENTO_CEDILHA(" + filtroEntre + ")";
@@ -234,9 +230,9 @@ namespace System.Uteis
                     case "System.String":
                         if (_removerAcentuacao)
                         {
-                            if (_banco == Globals.CBanco.Acad)
+                            if (_banco == Globals.CBanco.guardId)
                                 where = "WHERE UPPER(SGA.F_REMOVE_ACENTO_CEDILHA(" + coluna + "))";
-                            else if (_banco == Globals.CBanco.Gem)
+                            else if (_banco == Globals.CBanco.guardId)
                                 where = "WHERE UPPER(OBVIUS.F_REMOVE_ACENTO_CEDILHA(" + coluna + "))";
                         }
                         else

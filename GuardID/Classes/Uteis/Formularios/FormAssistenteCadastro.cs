@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 using System.Reflection;
-using System.Data.Objects.DataClasses;
-using Classes.Entity;
+using Classes.Autenticacoes;
 
 namespace System.Uteis
 {
-    public partial class FormAssistenteCadastro : FormBasic
+	public partial class FormAssistenteCadastro : FormBasic
     {
         /// <summary>
         /// Formulário que servirá de referência para as operações de Inclusão, Exclusão e Alteração de regristros da grid
@@ -110,7 +103,7 @@ namespace System.Uteis
                     frmBase = (FormCadastro)Activator.CreateInstance(frmBase.GetType());
 
                     //Configura e chama o frmBase
-                    frmBase.FormBorderStyle = Forms.FormBorderStyle.FixedDialog;
+                    frmBase.FormBorderStyle = FormBorderStyle.FixedDialog;
                     frmBase.MinimizeBox = false;
                     frmBase.MaximizeBox = false;
                     frmBase.AcaoFormulario = CAcaoFormulario.Novo;

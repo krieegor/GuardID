@@ -1,17 +1,15 @@
-﻿using System;
+﻿using Classes.Autenticacoes;
+using Classes.Conexoes;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ClassesConexoes;
-using Classes.Entity;
 
 namespace System.Uteis
 {
-    public partial class frmManutencaoPermissoesEditarGrupo : FormBasic
+	public partial class frmManutencaoPermissoesEditarGrupo : FormBasic
     {
         private int _grupo;
 

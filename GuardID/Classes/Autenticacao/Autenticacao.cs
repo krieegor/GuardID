@@ -12,8 +12,8 @@ namespace Classes.Autenticacoes
             {
                 int usuario;
                 string senha, conexao;
-                Globals.Conexao = "ACAD";
-                Globals.Usuario = 155;
+                Globals.Conexao = "Guardid";
+                Globals.Usuario = 0001;
                 Globals.Login = "";
 
                 Conexao dal = new Conexao(Globals.GetStringConnection(), 2);

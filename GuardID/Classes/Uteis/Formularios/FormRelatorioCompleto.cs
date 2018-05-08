@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 #pragma warning disable CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
-using Microsoft.Reporting.WinForms;
 #pragma warning restore CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
-using Classes.Uteis;
 using System.Diagnostics;
-using System.Threading;
 using System.IO;
-using Classes.Entity;
+using Classes.Autenticacoes;
 
 namespace System.Uteis
 {
-    public partial class FormRelatorioCompleto : FormBasic
+	public partial class FormRelatorioCompleto : FormBasic
     {
         public FormRelatorioCompleto()
         {
@@ -1028,8 +1022,8 @@ namespace System.Uteis
                 }
 
                 //Tratamento do List Campos recursos genéricos
-                if (ctrl is System.Uteis.ListaCampos1 && ((System.Uteis.ListaCampos1)ctrl).Checado())
-                    _filtrosUtilizados.Add(((System.Uteis.ListaCampos1)ctrl).TextCheck + ": " + ((System.Uteis.ListaCampos1)ctrl).RetornaLista().Replace("'", "").Replace(",", ", "));
+                if (ctrl is Uteis.ListaCampos1 && ((Uteis.ListaCampos1)ctrl).Checado())
+                    _filtrosUtilizados.Add(((Uteis.ListaCampos1)ctrl).TextCheck + ": " + ((Uteis.ListaCampos1)ctrl).RetornaLista().Replace("'", "").Replace(",", ", "));
 
                 //Tratamento do ComboBox
                 if (ctrl is ComboBoxGuard && ((ComboBoxGuard)ctrl).SelectedIndex != -1 && !((ComboBoxGuard)ctrl).SelectedItem.ToString().Trim().Equals(""))
@@ -1045,7 +1039,7 @@ namespace System.Uteis
                 }
 
                 //Tratamento do Intervalo de Campos dos Recursos Genéricos
-                if (ctrl is RecursosGenericos.Intervalo1 && ((RecursosGenericos.Intervalo1)ctrl).Preenchido())
+                if (ctrl is RecursosGenericos.Intervalo1 && ((Intervalo1)ctrl).Preenchido())
                 {
                     string tagInicial = ((RecursosGenericos.Intervalo1)ctrl).txtInicial.Tag.ToString();
                     string tagFinal = ((RecursosGenericos.Intervalo1)ctrl).txtFinal.Tag.ToString();

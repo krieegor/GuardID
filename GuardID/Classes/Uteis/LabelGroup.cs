@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-using System.Reflection.Emit;
+using System.Windows.Forms;
 
 namespace System.Uteis
 {
@@ -15,7 +15,7 @@ namespace System.Uteis
         public LabelGroupGuard()
         {
             InitializeComponent();
-            base.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            base.Font = new Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             base.BackColor = Color.FromArgb(195, 217, 241);
             base.BorderStyle = BorderStyle.FixedSingle;
             base.Padding = new Padding(1);

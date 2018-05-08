@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using Classes.Autenticacoes;
 using System.Windows.Forms;
-using System.Uteis;
-using Classes.Entity;
 
 namespace System.Uteis
 {
-    public partial class FormConsulta : FormBasic
+	public partial class FormConsulta : FormBasic
     {
         public FormConsulta()
         {

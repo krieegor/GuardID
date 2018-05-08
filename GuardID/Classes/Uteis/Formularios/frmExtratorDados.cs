@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OracleClient;
@@ -7,14 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Uteis;
-using Classes.Entity;
+using Classes.Autenticacoes;
+using Classes.Conexoes;
 using Classes.Uteis;
-using ClassesConexoes;
 
 namespace System.Uteis
 {
-    public partial class frmExtratorDados : FormProcesso
+	public partial class frmExtratorDados : FormProcesso
     {
         private DataTable dtFinal;
         private DataColumn column;
