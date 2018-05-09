@@ -55,11 +55,7 @@ namespace System.Uteis
         private void BuscarInformacoesPrograma()
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append(@"
-                        SELECT P.DESCRICAO AS NM_PROGRAMA,PROGRAMA, P.SISTEMA|| ' ' || S.DESCRICAO SISTEMA, P.TIPO
-                               FROM SEG.PROGRAMAS P 
-                               JOIN SEG.SISTEMAS S ON(S.SISTEMA = P.SISTEMA) 
-                            WHERE PROGRAMA = '" + this.CodPrograma + "'");
+            sql.Append(@"");
             DataTable dtPrograma = this.retornaDataTable(sql);
 
             if (dtPrograma.Rows.Count == 1)
@@ -75,11 +71,7 @@ namespace System.Uteis
         private void BuscarInformacoesUsuario()
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append(@"
-                        SELECT UP.ADMIN
-                          FROM SEG.USUARIOS_PERMISSOES UP
-                         WHERE UP.PROGRAMA = '" + this.CodPrograma + @"'
-                           AND UP.USUARIO = " + this.UsuarioLogado);
+            sql.Append(@"");
             DataTable dtUsuario = this.retornaDataTable(sql);
 
             if (dtUsuario.Rows.Count == 1)
@@ -98,20 +90,7 @@ namespace System.Uteis
         private void PreencherGruposAcesso()
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append(@"
-                        SELECT GP.GRUPO, G.DESCRICAO, 
-		                               (SELECT COUNT(*) FROM SEG.USUARIOS_GRUPOS UG 
-		                                                     INNER JOIN SEG.USUARIOS U ON(U.USUARIO = UG.USUARIO) 
-		                                WHERE UG.GRUPO = GP.GRUPO 
-		                                      AND U.SITUACAO <> 0 ) AS PARTICIPANTES, 
-		                               1 VISUALIZAR,  
-		                               CAST(NVL(GP.INCLUIR,'0') AS INTEGER) INCLUIR,  
-		                               CAST(NVL(GP.ALTERAR,'0') AS INTEGER) ALTERAR,  
-		                               CAST(NVL(GP.EXCLUIR,'0') AS INTEGER) EXCLUIR,   
-		                               NVL((SELECT UG.ADMIN FROM SEG.USUARIOS_GRUPOS UG WHERE UG.USUARIO = " + this._usuarioLogado + @" AND UG.GRUPO = GP.GRUPO),0) AS ADMIN 
-		                        FROM SEG.GRUPOS_PROGRAMAS GP  
-		                             INNER JOIN SEG.GRUPOS G ON (G.GRUPO = GP.GRUPO)  
-		                        WHERE PROGRAMA = '" + this.CodPrograma + "'");
+            sql.Append(@"");
             DataTable dtGruposAcesso = this.retornaDataTable(sql);
 
             if (dtGruposAcesso.Rows.Count > 0)
@@ -151,20 +130,7 @@ namespace System.Uteis
         {
             StringBuilder sql = new StringBuilder();
             sql.Append(@"
-                        SELECT 0 AS BTN_LOG,U.USUARIO AS USUARIO,  
-		                               CAST(SUBSTR(U.NOME||(SELECT CASE WHEN NVL(UP.VISUALIZAR,0)+NVL(UP.INCLUIR ,0)+NVL(UP.ALTERAR,0)+NVL(UP.EXCLUIR,0) = 0 THEN ' (SEM PERMISSÃO)'   
-		                                                ELSE ' (PERMISSÃO: '||DECODE(NVL(UP.VISUALIZAR,0),0,'','VIS')||DECODE(NVL(UP.INCLUIR ,0),0,'',' INC')  
-		                                                               ||DECODE(NVL(UP.ALTERAR   ,0),0,'',' ALT')||DECODE(NVL(UP.EXCLUIR,0),0,'',' EXC')||' )' END   
-		                                          FROM SEG.USUARIOS_PERMISSOES UP WHERE UP.USUARIO = U.USUARIO AND PROGRAMA = '" + this.CodPrograma + @"'),1,60) AS CHAR(60)) AS NOME,  
-		                               CAST(C.CENTRO_CUSTO || ' - ' || C.DESCRICAO_CCUST AS VARCHAR2(115)) AS CENTRO_CUSTO,            		  
-		                               U.MASTER,  
-		                               (SELECT DECODE(COUNT(*),0,0,1) FROM SEG.USUARIOS_PERMISSOES WHERE USUARIO = U.USUARIO AND PROGRAMA = '" + this.CodPrograma + @"') HERANCA,         
-                                       (SELECT UGI.ADMIN FROM SEG.USUARIOS_GRUPOS UGI WHERE UGI.USUARIO = U.USUARIO AND UGI.GRUPO = " + grupo + @") AS ADMIN_GRUPO,
-                                        U.SITUACAO
-		                        FROM SEG.USUARIOS U 
-		                             LEFT JOIN MTD.VW_COLABORADORES C ON(C.MATRICULA = U.USUARIO) 
-		                        WHERE U.USUARIO IN(SELECT UG.USUARIO FROM SEG.USUARIOS_GRUPOS UG WHERE UG.GRUPO = " + grupo + @" ) 
-		                        ORDER BY U.NOME ");
+                        ");
             DataTable dtUsuariosGrupo = this.retornaDataTable(sql);
 
             if (dtUsuariosGrupo.Rows.Count > 0)
@@ -274,11 +240,11 @@ namespace System.Uteis
 
                     if ((item["HERANCA"].ToString().Equals("0") || item["ADMIN"].ToString().Equals("1")) && item["MASTER"].ToString().Equals("0"))
                     {
-                        dtRows["USUARIOS_HERDAR_PERMISSOES_GRUPO"] = new Bitmap(@"S:\Sistemas dotNet\Figuras\Group.png");
+                        dtRows["USUARIOS_HERDAR_PERMISSOES_GRUPO"] = new Bitmap(@"Group.png");
                     }
                     else
                     {
-                        dtRows["USUARIOS_HERDAR_PERMISSOES_GRUPO"] = new Bitmap(@"S:\Sistemas dotNet\Figuras\ImagemVazia.png");
+                        dtRows["USUARIOS_HERDAR_PERMISSOES_GRUPO"] = new Bitmap(@"ImagemVazia.png");
                     }
 
                     dtGrid.Rows.Add(dtRows);
@@ -451,38 +417,12 @@ namespace System.Uteis
 
                     string update_set = "";
 
-                    if (coluna.Equals("GRUPOS_INSERIR"))
-                    {
-                        update_set = "SET GP.INCLUIR = " + (dgvGruposAcesso.Rows[e.RowIndex].Cells["GRUPOS_INSERIR"].Value.ToString().Equals("False") ? "1" : "0").ToString();
-                    }
-                    else if (coluna.Equals("GRUPOS_ALTERAR"))
-                    {
-                        update_set = "SET GP.ALTERAR = " + (dgvGruposAcesso.Rows[e.RowIndex].Cells["GRUPOS_ALTERAR"].Value.ToString().Equals("False") ? "1" : "0").ToString();
-                    }
-                    else if (coluna.Equals("GRUPOS_EXCLUIR"))
-                    {
-                        update_set = "SET GP.EXCLUIR = " + (dgvGruposAcesso.Rows[e.RowIndex].Cells["GRUPOS_EXCLUIR"].Value.ToString().Equals("False") ? "1" : "0").ToString();
-                    }
-                    else if (coluna.Equals("GRUPOS_EXCLUIR_GRUPO"))
-                    {
-                        if ((MessageBox.Show("Confirma a exclusão do grupo " + grupoSelecionado + " da lista de permissões?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes))
-                        {
-                            string sql = (@"DELETE FROM SEG.GRUPOS_PROGRAMAS GP WHERE GP.GRUPO = " + grupoSelecionado + " AND GP.PROGRAMA = '" + this.CodPrograma + "'");
-                            Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
-                            dal.ExecuteNonQuery(sql);
-
-                            int index = dgvGruposAcesso.SelectedRows[0].Index;
-                            PreencherGruposAcesso();
-                            dgvGruposAcesso.Rows[index].Selected = true;
-                        }
-                    }
+                   
 
                     if (!string.IsNullOrEmpty(update_set))
                     {
                         string sql = "";
-                        sql = (@"UPDATE SEG.GRUPOS_PROGRAMAS GP " +
-                                 update_set +
-                               " WHERE GP.GRUPO = " + grupoSelecionado + " AND GP.PROGRAMA = '" + this.CodPrograma + "'");
+                        sql = (@"");
                         Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                         dal.ExecuteNonQuery(sql);
 
@@ -496,11 +436,7 @@ namespace System.Uteis
                 {
                     #region Verificar se o usuário é administrador do grupo para permitir ou não editar
                     StringBuilder sql = new StringBuilder();
-                    sql.Append(@"
-                    SELECT ug.admin
-                      FROM seg.usuarios_grupos ug
-                     WHERE ug.grupo = " + grupoSelecionado + @"
-                       AND ug.usuario = " + Globals.Usuario);
+                    sql.Append(@"");
                     Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                     DataTable dtUsuario = dal.ExecuteQuery(sql.ToString());
 
@@ -679,9 +615,7 @@ namespace System.Uteis
                             {
                                 if ((MessageBox.Show("Confirma a atribuição das permissões do grupo ao usuário " + usuario + "?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes))
                                 {
-                                    string sql = @" DELETE FROM SEG.USUARIOS_PERMISSOES UP
-                                         WHERE UP.USUARIO = " + usuario + @"
-                                           AND UP.PROGRAMA = '" + this.CodPrograma + "'";
+                                    string sql = @" ";
                                     Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                                     dal.ExecuteNonQuery(sql);
 
@@ -798,14 +732,12 @@ namespace System.Uteis
                         //Usuários com permissão individual
                         if (permissaoIndividual)
                         {
-                            sql = (@"UPDATE SEG.USUARIOS_PERMISSOES UP " +
-                                 update_set +
-                               " WHERE UP.USUARIO = " + usuario + " AND UP.PROGRAMA = '" + this.CodPrograma + "'");
+                            sql = (@"");
                         }
                         //Usuários com permissão do grupo (inserir registro em seg.usuarios_permissoes)
                         else
                         {
-                            sql = (@"   INSERT INTO SEG.USUARIOS_PERMISSOES (USUARIO, PROGRAMA, INCLUIR, EXCLUIR, ALTERAR, VISUALIZAR, ADMIN) VALUES (" + usuario + ",'" + this.CodPrograma + "'," + insert_values + ")");
+                            sql = (@"  ");
                         }
 
                         Conexao dal = new Conexao(Globals.GetStringConnection(), 2);

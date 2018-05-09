@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iLabelgroup.ico")]
+    [ToolboxBitmap(@"iLabelgroup.ico")]
     public partial class LabelGroupGuard : Label
     {                
         public LabelGroupGuard()

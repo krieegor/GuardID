@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iMasktextbox.ico")]
+    [ToolboxBitmap(@"iMasktextbox.ico")]
     public partial class MaskedTextBoxDataGuard : MaskedTextBox
     {
         public MaskedTextBoxDataGuard()

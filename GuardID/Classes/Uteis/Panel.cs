@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iPanel.ico")]
+    [ToolboxBitmap(@"iPanel.ico")]
     public partial class PanelGuard : Panel
     {
         public PanelGuard()

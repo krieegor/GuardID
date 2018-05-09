@@ -121,7 +121,7 @@ namespace System.Uteis
         /// <param name="colunaPrincipal">Coluna Principal</param>
         private void PreencheComboColuna(string colunaPrincipal)
         {
-            string sql = "SELECT * FROM (" + _sql + ") VWBUSCA WHERE 1 = 0 ";
+            string sql = "0 ";
 
             Conexao dal = new Conexao(Globals.GetStringConnection(_banco), 2);
             foreach (OracleParameter op in _parametros)
@@ -213,13 +213,13 @@ namespace System.Uteis
                 {
                     if (_banco == Globals.CBanco.guardId)
                     {
-                        filtro = "SGA.F_REMOVE_ACENTO_CEDILHA(" + filtro + ")";
-                        filtroEntre = "SGA.F_REMOVE_ACENTO_CEDILHA(" + filtroEntre + ")";
+                        filtro = "";
+                        filtroEntre = "";
                     }
                     else if (_banco == Globals.CBanco.guardId)
                     {
-                        filtro = "OBVIUS.F_REMOVE_ACENTO_CEDILHA(" + filtro + ")";
-                        filtroEntre = "OBVIUS.F_REMOVE_ACENTO_CEDILHA(" + filtroEntre + ")";
+                        filtro = "";
+                        filtroEntre = "";
                     }
                     else
                         MessageBox.Show("Opção de remover acentuação não implementada para o banco: " + _banco.ToString(), "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -231,15 +231,15 @@ namespace System.Uteis
                         if (_removerAcentuacao)
                         {
                             if (_banco == Globals.CBanco.guardId)
-                                where = "WHERE UPPER(SGA.F_REMOVE_ACENTO_CEDILHA(" + coluna + "))";
+                                where = "";
                             else if (_banco == Globals.CBanco.guardId)
-                                where = "WHERE UPPER(OBVIUS.F_REMOVE_ACENTO_CEDILHA(" + coluna + "))";
+                                where = "";
                         }
                         else
-                            where = "WHERE UPPER(" + coluna + ")";
+                            where = "";
                         break;
                     case "System.DateTime":
-                        where = "WHERE TRUNC(" + coluna + ")";
+                        where = "";
                         break;
                     default:
                         where = "WHERE " + coluna;
@@ -285,7 +285,7 @@ namespace System.Uteis
                 }
             }
 
-            string sql = "SELECT * FROM (" + _sql + ") VWBUSCA " + where + " ORDER BY " + ((string.IsNullOrEmpty(_orderBy) || string.IsNullOrWhiteSpace(_orderBy)) ? coluna : _orderBy);
+            string sql = "";
             //WaitWindow.Begin("Buscando Informações...");
             DataTable dt = new DataTable();
             dt = dal.ExecuteQuery(sql);

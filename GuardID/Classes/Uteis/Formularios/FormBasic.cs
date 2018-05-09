@@ -140,10 +140,7 @@ namespace System.Uteis
                         StringBuilder sql = new StringBuilder();
 
 
-                        sql.Append(@"SELECT E.DESCRICAO, E.RAMAL, E.EMAIL
-                                   FROM SEG.SISTEMAS S 
-                                   JOIN SEG.EQUIPES E ON(E.EQUIPE = S.EQUIPE_DES)
-                                  WHERE S.SISTEMA =  " + sistema.ToString());
+                        sql.Append(@"");
 
                         Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
 
@@ -302,9 +299,7 @@ namespace System.Uteis
             StringBuilder sql = new StringBuilder();
 
             sql.Append(@"
-            SELECT executavel
-              FROM seg.sistemas s
-             WHERE s.sistema = " + codigoSistema);
+           ");
             DataTable dtSistema = dal.ExecuteQuery(sql.ToString());
 
             if (dtSistema.Rows.Count > 0)
@@ -312,27 +307,17 @@ namespace System.Uteis
                 string caminho = dtSistema.Rows[0][0].ToString();
 
                 sql.Clear();
-                sql.Append(@"SELECT seg.f_gera_autenticacao(" + Globals.Usuario + @",'" +
-                                                                        Globals.Login + @"','" +
-                                                                        Globals.Conexao + @"') FROM dual");
+                sql.Append(@"");
                 DataTable dt = dal.ExecuteQuery(sql.ToString());
 
                 sql.Clear();
                 sql.Append(@"
-                SELECT *
-                  FROM seg.parametros_temporarios pt
-                 WHERE pt.sistema = " + codigoSistema + @"
-                   AND pt.usuario = " + Globals.Usuario + @"
-                   AND pt.projeto = '" + nomeProjeto + @"'
-                   AND pt.formulario = '" + nomeFormulario + "'");
+               ");
                 dt = ExecutarSQL(sql.ToString());
                 if (dt.Rows.Count == 0)
                 {
                     sql.Clear();
-                    sql.Append(@"
-                    INSERT INTO seg.parametros_temporarios pt 
-                           (pt.sistema, pt.usuario, pt.projeto, pt.formulario, pt.parametros)
-                    VALUES (" + codigoSistema + "," + Globals.Usuario + ",'" + nomeProjeto + "','" + nomeFormulario + "','" + parametros + "')");
+                    sql.Append(@"");
                     dal.ExecuteNonQuery(sql.ToString());
                 }
 
@@ -347,11 +332,7 @@ namespace System.Uteis
                 try
                 {
                     StringBuilder sql = new StringBuilder();
-                    sql.Append(@"
-                    SELECT pt.sistema, pt.usuario, pt.projeto, pt.formulario, nvl(pt.parametros,' ') AS parametros
-                      FROM seg.parametros_temporarios pt 
-                     WHERE pt.sistema = " + Globals.Sistema + @"
-                       AND pt.usuario = " + Globals.Usuario);
+                    sql.Append(@"");
                     DataTable dt = ExecutarSQL(sql.ToString());
 
                     if (dt.Rows.Count > 0)
@@ -455,12 +436,7 @@ namespace System.Uteis
                             #endregion
 
                             sql.Clear();
-                            sql.Append(@"
-                            DELETE FROM seg.parametros_temporarios pt 
-                             WHERE pt.sistema = " + Globals.Sistema + @"
-                               AND pt.usuario = " + Globals.Usuario + @"
-                               AND pt.projeto = '" + projectName + @"'
-                               AND pt.formulario = '" + formName + "'");
+                            sql.Append(@"");
                             new Classes.Conexoes.Conexao(Globals.GetStringConnection(), 2).ExecuteNonQuery(sql.ToString());
                         }
 
@@ -1118,12 +1094,7 @@ namespace System.Uteis
                 string[] campos = ((TextBoxGuard)item).InformacaoToolTipCaminho.Split('.');
 
                 StringBuilder sql = new StringBuilder();
-                sql.Append(@"
-                SELECT c.comments
-                  FROM sys.all_col_comments c
-                 WHERE upper(c.owner) = upper('" + campos[0] + @"')
-                   AND upper(c.table_name) = upper('" + campos[1] + @"')
-                   AND upper(c.column_name) = upper('" + campos[2] + "')");
+                sql.Append(@"");
 
                 Classes.Conexoes.Conexao dal = new Classes.Conexoes.Conexao(Globals.GetStringConnection(), 2);
                 DataTable dtDados = dal.ExecuteQuery(sql.ToString());
@@ -1307,13 +1278,7 @@ namespace System.Uteis
             else
             {
 
-                string sql = @" SELECT p.permissao_visualizar AS visualizar,
-                                       p.permissao_incluir    AS incluir,
-                                       p.permissao_excluir    AS excluir,
-                                       p.permissao_alterar    AS alterar
-                                  FROM seg.vw_permissoes p
-                                  WHERE p.USUARIO = " + Globals.Usuario + @"
-                                  AND p.PROGRAMA = '" + codigoSeguranca + "'";
+                string sql = @"";
 
                 DataTable dt = ExecutarSQL(sql);
 
@@ -1429,8 +1394,7 @@ namespace System.Uteis
             //informacao = "'" + informacao.Substring(0, informacao.Length - 3).Replace("'N'", "''N''").Replace("'S'", "''S''");
             informacao = "'" + informacao.Substring(0, informacao.Length - 3);
 
-            sql.Append(@"INSERT INTO HU.EXTRATOR_DADOS_USUARIO_FILTROS(COMANDO, USUARIO, SISTEMA, FILTRO, DETALHES) 
-                            VALUES (" + pComando + ",USER, " + pSistema + ", " + pFiltro + ", (select " + informacao + " from dual))");
+            sql.Append(@"");
             informacoesArquivoTxt = "";
             ExecutarSQL(sql.ToString());
         }
@@ -1546,8 +1510,7 @@ namespace System.Uteis
                 Directory.CreateDirectory(folder);
             }
             StringBuilder sql = new StringBuilder();
-            sql.Append(@"SELECT EDUF.COMANDO, EDUF.FILTRO, EDUF.DETALHES FROM HU.EXTRATOR_DADOS_USUARIO_FILTROS EDUF 
-                        WHERE EDUF.USUARIO = USER AND EDUF.SISTEMA = " + pSistema + " AND EDUF.COMANDO = " + pComando);
+            sql.Append(@"");
             sql.Append(!string.IsNullOrEmpty(pFiltro.ToString()) ? " AND EDUF.FILTRO = " + pFiltro : "");
             DataTable dt = ExecutarSQL(sql.ToString());
             string valorArquivoTemporario = "";
@@ -1710,17 +1673,7 @@ namespace System.Uteis
                     informacoesArquivoTxt += System.Environment.NewLine;
                 }
             }
-            //if (pControle is ListBoxGuard)
-            //{
-            //    if (((ListBoxGuard)(pControle)).LimpaCampo)
-            //    {
-            //        //((ListBoxGuard)(pControle)).DataSource = null;
-            //        //((ListBoxGuard)(pControle)).Items.Clear();
-            //        campostxt += pControle.Name + " (" + pControle.Text + ")";
-            //        campostxt += System.Environment.NewLine;
-            //    }
-            //    return;
-            //}
+
         }
         private void PercorrerObjetosLinha(Control.ControlCollection pControle, string pLinhaTxt)//PERCORRE OS COMPONENTES DA TELA E DEPOIS INSERI OS VALORES
         {

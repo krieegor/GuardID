@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iButton.ico")]
+    [ToolboxBitmap(@"iButton.ico")]
     public partial class NumericUpDownGuard : NumericUpDown
     {
         /// <summary>

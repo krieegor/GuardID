@@ -78,16 +78,7 @@ namespace Classes.Autenticacoes
 
             dal.AddParam("Usuario", usuario);
 
-            sql.Append(@"SELECT USUARIO, 
-								PROGRAMA,       
-								PERMISSAO_QUALQUER, 
-								PERMISSAO_VISUALIZAR, 
-								PERMISSAO_INCLUIR, 
-								PERMISSAO_ALTERAR, 
-								PERMISSAO_EXCLUIR, 
-								ATIVO
-								FROM SEG.VW_PERMISSOES VW 
-								WHERE VW.USUARIO = :Usuario ");
+            sql.Append(@" ");
 
             dt = dal.ExecuteQuery(sql.ToString());
             foreach (DataRow dr in dt.Rows)
@@ -125,17 +116,7 @@ namespace Classes.Autenticacoes
             dal.AddParam("Usuario", usuario);
             dal.AddParam("Programa", programa);
 
-            sql.Append(@"SELECT USUARIO, 
-								PROGRAMA, 
-								PERMISSAO_QUALQUER, 
-								PERMISSAO_VISUALIZAR, 
-								PERMISSAO_INCLUIR, 
-								PERMISSAO_ALTERAR, 
-								PERMISSAO_EXCLUIR, 
-								ATIVO 
-								FROM SEG.VW_PERMISSOES VW 
-								WHERE VW.USUARIO = :Usuario 
-								AND VW.PROGRAMA = :Programa ");
+            sql.Append(@"");
 
             dt = dal.ExecuteQuery(sql.ToString());
 
@@ -198,8 +179,7 @@ namespace Classes.Autenticacoes
             StringBuilder sql = new StringBuilder();
             dal.AddParam("Usuario", usuario);
 
-            sql.Append(" SELECT USUARIO, NOME, EMAIL, CPF, SITUACAO, MASTER, POLO, CARTEIRA ");
-            sql.Append(" FROM SEG.USUARIOS WHERE USUARIO = :Usuario");
+            sql.Append(" ");
 
             return dal.ExecuteQuery(sql.ToString());
         }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iRadiobutton.ico")]
+    [ToolboxBitmap(@"iRadiobutton.ico")]
     public partial class RadioButtonGuard : RadioButton
     {
         public RadioButtonGuard()

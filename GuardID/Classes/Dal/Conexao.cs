@@ -160,7 +160,7 @@ namespace Classes.Conexoes
 
                     _cmdErro.Connection = _connErro;
 
-                    _cmdErro.CommandText = "INSERT INTO logdb.log_erros (data, usuario, codigo, mensagem, stack_trace, ip, sql, parametros) VALUES (sysdate, :usuario, :cod, :mensagem, :stack, :ip, :sql, :param)";
+                    _cmdErro.CommandText = "";
                     _cmdErro.CommandType = CommandType.Text;
 
                     if (System.Web.HttpContext.Current.Session["usuario"] != null)
@@ -657,11 +657,11 @@ namespace Classes.Conexoes
             {
                 //define os comandos SQL para icluir dados na tabela Transportadoras do banco de dados Northwind.mdb 
 
-                comando.CommandText = "Insert into Transportadoras (CódigoDaTransportadora,NomeDaEmpresa,Telefone) VALUES (4, 'JcmSoft','(055)-658-55')";
+                comando.CommandText = "";
 
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "Insert into Transportadoras (CódigoDaTransportadora,NomeDaEmpresa,Telefone) VALUES (5, 'Macorati','(061)-123-54')";
+                comando.CommandText = "";
 
                 comando.ExecuteNonQuery();
 

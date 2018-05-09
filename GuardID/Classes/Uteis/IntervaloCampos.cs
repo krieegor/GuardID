@@ -13,7 +13,7 @@ using System.Uteis;
 
 namespace IntervaloCampos
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\intervalo.ico")]
+    [ToolboxBitmap(@"intervalo.ico")]
     public partial class IntervaloCampos : UserControl
     {
         public IntervaloCampos()

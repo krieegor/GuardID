@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    //[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iGroupbox.ico")]
+    //[ToolboxBitmap(@"iGroupbox.ico")]
     public partial class TabControlGuard : TabControl
     {
         public TabControlGuard()

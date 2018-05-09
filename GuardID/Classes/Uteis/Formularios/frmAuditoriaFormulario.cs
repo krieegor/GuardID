@@ -84,18 +84,7 @@ namespace System.Uteis
                 dal.AddParam("tabela", codigo);
                 dal.AddParam("chave", chave);
 
-                sel = @"SELECT L.USUARIO, 
-                        NVL((SELECT U.NOME FROM SEG.USUARIOS U WHERE CAST(U.USUARIO AS VARCHAR2(30)) = L.USUARIO),'USUÁRIO INTERNO') NOME, 
-                        DATA, 
-                        CASE WHEN ACAO = 1 THEN 'INSERÇÃO' 
-                             WHEN ACAO = 2 THEN 'ALTERAÇÃO' 
-                                           ELSE 'EXCLUSÃO' END NOMEACAO,   
-                        ACAO,DETALHE                   
-                     FROM " + this._tabelaLog + @" L
-                   WHERE TABELA = TRIM(TO_CHAR(:tabela))
-                          AND DETALHE IS NOT NULL " + this._detalhe + @"
-                          AND CHAVE LIKE TRIM(:chave)
-                    ORDER BY DATA DESC, DECODE(ACAO,2,-1,3,0,ACAO) DESC ";
+                sel = @"";
 
                 dtLog = dal.ExecuteQuery(sel);
 
@@ -498,7 +487,7 @@ namespace System.Uteis
             dal.AddParam("tabela", tabela);
             dal.AddParam("esquema", esquema);
 
-            sel = "SELECT TABELA FROM LOGDB.TABELAS WHERE DESCRICAO = :tabela  AND ESQUEMA = :esquema";
+            sel = "";
 
             dtBuscaCodigo = dal.ExecuteQuery(sel);
             if (dtBuscaCodigo != null && dtBuscaCodigo.Rows.Count > 0)

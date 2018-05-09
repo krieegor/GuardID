@@ -10,7 +10,7 @@ using System.Uteis;
 
 namespace Componentes
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\intervalo_comp.png")]
+    [ToolboxBitmap(@"intervalo_comp.png")]
     public partial class IntervaloCompetencias : UserControl
     {
         public IntervaloCompetencias()

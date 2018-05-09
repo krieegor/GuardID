@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iMasktextbox.ico")]
+	[ToolboxBitmap(@"iMasktextbox.ico")]
     public partial class MaskedTextBoxFoneGuard : MaskedTextBoxDataGuard
     {
         // DDDs que necessita de nove digitos (para celular)

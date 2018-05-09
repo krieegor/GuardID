@@ -816,29 +816,11 @@ namespace System.Uteis
 
             if (Globals.Sistema == 129) //MV
             {
-                return new StringBuilder(@"select f.filtro, f.descricao filtro_desc, decode(nvl(cf.obrigatorio,0), 0, 'NÃO', 'SIM') filtro_obrigatorio "
-                                  + (pExibirCamposParametros ? @", 
-                                               nvl(cf.obrigatorio,0) obrigatorio, cf.tipo_filtro, decode(cf.tipo_filtro, 1, 'in', 2, 'not in', 3, 'between') tipo_filtro_desc,
-                                               f.tipo_valor, f.nome_campo, case when f.query_pesquisa is null then 0 else 1 end contem_pesquisa, 
-                                               auto_executar_pesquisa, ident_posicao_filtro posicao_filtro, cf.nome_campo_filtro " : "") + @"
-                                        from hu.extrator_dados_comandos_filtro cf
-                                        join hu.extrator_dados_comandos c on c.comando = cf.comando
-                                        join hu.extrator_dados_filtros f on f.filtro = cf.filtro
-                                        where c.sistema = &pSistema "
-                            + where);
+                return new StringBuilder(@"");
             }
             else
             {
-                return new StringBuilder(@"select f.filtro, f.descricao filtro_desc, decode(nvl(cf.obrigatorio,0), 0, 'NÃO', 'SIM') filtro_obrigatorio "
-                                  + (pExibirCamposParametros ? @", 
-                                               nvl(cf.obrigatorio,0) obrigatorio, cf.tipo_filtro, decode(cf.tipo_filtro, 1, 'in', 2, 'not in', 3, 'between') tipo_filtro_desc,
-                                               f.tipo_valor, f.nome_campo, case when f.query_pesquisada is null then 0 else 1 end contem_pesquisa, 
-                                               auto_executar_pesquisa, ident_posicao_filtro posicao_filtro, cf.nome_campo_filtro " : "") + @"
-                                        from hu.extrator_dados_comandos_filtro cf
-                                        join hu.extrator_dados_comandos c on c.comando = cf.comando
-                                        join hu.extrator_dados_filtros f on f.filtro = cf.filtro
-                                        where c.sistema = &pSistema "
-                            + where);
+                return new StringBuilder(@"");
             }
         }
         private static DataTable BuscaExtratorDadosComandosFiltros(string pComando, string pFiltro, int pSistema)
@@ -862,7 +844,7 @@ namespace System.Uteis
             dal.AddParam("pComando", pComando);
             dal.AddParam("pSistema", pSistema);
 
-            DataTable dt = dal.ExecuteQuery(@" select descricao sql from hu.extrator_dados_comandos where comando = &pComando and sistema = &pSistema ");
+            DataTable dt = dal.ExecuteQuery(@"  ");
 
             if (dt.Rows.Count == 1)
             {
@@ -880,7 +862,7 @@ namespace System.Uteis
 
             // Acrescentado em 25/06/2015 para atribuir a empresa sempre que for executar um SELECT no MV
             if (sistema == 129)
-                dal.ExecuteNonQuery(@"CALL PKG_MV2000.ATRIBUI_EMPRESA(1)");
+                dal.ExecuteNonQuery(@"");
 
             foreach (System.Data.OracleClient.OracleParameter p in lParam)
                 dal.AddParam(p.ParameterName, p.Value);
@@ -890,8 +872,7 @@ namespace System.Uteis
 
         private static StringBuilder QueryBuscaExtratorDadosComando(string pComando)
         {
-            return new StringBuilder(@"select comando, nome comando_desc, descricao sql, finalidade from hu.extrator_dados_comandos 
-                                        where sistema = &pSistema " + (string.IsNullOrEmpty(pComando) ? "" : " and comando = &pComando "));
+            return new StringBuilder(@"");
         }
         private static DataTable BuscaExtratorDadosComando(string pComando, int pSistema)
         {
@@ -911,28 +892,12 @@ namespace System.Uteis
             dal.AddParam("pUsuario", pUsuario);
             dal.AddParam("pComando", pComando);
 
-            return dal.ExecuteQuery(@"select 1 
-                                      from hu.extrator_dados_permissoes 
-                                      where comando = &pComando 
-                                        and usuario = &pUsuario
-                                      union all
-                                      select 1
-                                      from hu.extrator_dados_usuarios_grupos ug
-                                      join hu.extrator_dados_grupos_comandos gc on gc.grupo = ug.grupo
-                                      where gc.comando = &pComando
-                                        and ug.usuario = &pUsuario").Rows.Count > 0;
+            return dal.ExecuteQuery(@"").Rows.Count > 0;
         }
 
         private static StringBuilder QueryBuscaAdministradoresExtratorDadosComando(string pComando)
         {
-            return new StringBuilder(@"select ep.comando, fun.numcad colaborador, fun.NOMFUN colaborador_desc
-                                        from hu.extrator_dados_permissoes ep
-                                        join bhora.r034fun fun on fun.numcad = ep.usuario
-                                        where fun.numemp = 1
-                                          and fun.tipcol = 1
-                                          and nvl(ep.administrador,0) = 1" +
-                                       (string.IsNullOrEmpty(pComando) ? "" : " and ep.comando = &pComando")
-                                       + " order by ep.comando, fun.nomfun ");
+            return new StringBuilder(@"");
         }
         private static DataTable BuscaAdministradoresExtratorDadosComando(string pComando)
         {
@@ -952,9 +917,9 @@ namespace System.Uteis
             DataTable dt;
 
             if (Globals.Sistema == 129)
-                dt = dal.ExecuteQuery(@"select query_pesquisa query_pesquisa from hu.extrator_dados_filtros where filtro = &pFiltro");
+                dt = dal.ExecuteQuery(@"");
             else
-                dt = dal.ExecuteQuery(@"select query_pesquisada query_pesquisa from hu.extrator_dados_filtros where filtro = &pFiltro");
+                dt = dal.ExecuteQuery(@"");
 
             if (dt.Rows.Count == 1)
                 return dt.Rows[0]["QUERY_PESQUISA"].ToString();

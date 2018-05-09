@@ -24,17 +24,7 @@ namespace System.Uteis
         {
             StringBuilder sql = new StringBuilder();
             sql.Append(@"
-            SELECT u.usuario AS usuario,
-                   TRIM(u.nome) AS nome,
-                   TRIM(c.cargo) AS cargo,
-                   trim(CAST(c.centro_custo || ' - ' || c.descricao_ccust AS VARCHAR2(115))) AS centro_custo,
-                   decode(u.master, 0, 'Não', 1, 'Sim', '') AS master,
-                   decode(ug.admin, 0, 'Não', 1, 'Sim', '') AS admin
-              FROM seg.usuarios u
-              LEFT JOIN mtd.vw_colaboradores c ON (c.matricula = u.usuario)
-              JOIN seg.usuarios_grupos ug ON (ug.grupo = " + this._grupo + @" AND ug.usuario = u.usuario)
-             WHERE u.situacao <> 0
-             ORDER BY u.nome");
+           ");
             Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
             DataTable dtUsuariosGrupo = dal.ExecuteQuery(sql.ToString());
 
@@ -50,11 +40,7 @@ namespace System.Uteis
 
             #region Verificar se o usuário é administrador do grupo
             sql.Clear();
-            sql.Append(@"
-            SELECT ug.admin
-              FROM seg.usuarios_grupos ug
-             WHERE ug.grupo = " + this._grupo + @"
-               AND ug.usuario = " + Globals.Usuario);
+            sql.Append(@"");
             DataTable dtUsuario = dal.ExecuteQuery(sql.ToString());
 
             if (!dtUsuario.Rows[0][0].ToString().Equals("1"))
@@ -66,11 +52,7 @@ namespace System.Uteis
 
             #region Preencher descrição do grupo
             sql.Clear();
-            sql.Append(@"
-            SELECT g.grupo,
-                   g.descricao
-              FROM seg.grupos g
-             WHERE g.grupo = " + this._grupo);
+            sql.Append(@"");
             DataTable dtGrupo = dal.ExecuteQuery(sql.ToString());
 
             lblCodGrupo.Text = this._grupo.ToString();
@@ -108,10 +90,7 @@ namespace System.Uteis
 
                     if ((MessageBox.Show("Confirma a exclusão do usuário " + usuario + " - " + usuarioNome.ToUpper() + " do grupo?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes))
                     {
-                        string sql = (@"
-                        DELETE FROM seg.usuarios_grupos ug
-                         WHERE ug.grupo = " + this._grupo + @"
-                           AND ug.usuario = " + usuario);
+                        string sql = (@"");
                         Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                         dal.ExecuteNonQuery(sql);
 
@@ -180,27 +159,7 @@ namespace System.Uteis
         {
             StringBuilder sql = new StringBuilder();
             sql.Append(@"
-            SELECT SUBSTR(U.NOME,1,30) AS NOME, 
-			       U.USUARIO AS USUARIO,  
-			       CAST(CL.CENTRO_CUSTO || ' - ' || SUBSTR(CC.DESCRICAO,1,70) AS VARCHAR2(85)) AS CENTRO_CUSTO,       
-			       (SELECT MAX(UG.GRUPO) FROM SEG.USUARIOS_GRUPOS UG WHERE UG.USUARIO = U.USUARIO) AS GRUPO, 
-			       (SELECT MAX(G.DESCRICAO)   
-			                  FROM (SELECT MAX(GRUPO) AS GRUPO,UG.USUARIO FROM SEG.USUARIOS_GRUPOS UG GROUP BY UG.USUARIO) UG   
-			                    INNER JOIN SEG.GRUPOS G ON(G.GRUPO = UG.GRUPO) WHERE UG.USUARIO = U.USUARIO GROUP BY G.DESCRICAO) AS NOMEGRUPO ,  
-			       (SELECT DECODE(COUNT(*),1,'1 PARTICIPANTE',COUNT(*) ||' PARTICIPANTES') FROM SEG.USUARIOS_GRUPOS UG    
-			      		             WHERE  UG.GRUPO = (SELECT MAX(UG.GRUPO) FROM SEG.USUARIOS_GRUPOS UG WHERE UG.USUARIO = U.USUARIO) ) AS PARTICIPANTES_GRUPO   
-			FROM SEG.USUARIOS U 
-			     LEFT  JOIN BHORA.COLABORADORES_CONTRATO CCO ON(CCO.MATRICULA = U.USUARIO) 
-			     LEFT  JOIN BHORA.COLABORADORES_LOTACAO CL ON(CL.MATRICULA = U.USUARIO) 
-			     LEFT  JOIN MTD.CENTROS_CUSTO CC ON(CC.CODIGO = CL.CENTRO_CUSTO) 
-			WHERE U.USUARIO NOT IN(SELECT UG.USUARIO FROM SEG.USUARIOS_GRUPOS UG   
-			                                INNER JOIN SEG.GRUPOS_PROGRAMAS GP ON(GP.GRUPO = UG.GRUPO) WHERE GP.PROGRAMA = 'LOGIN')  
-			      AND U.USUARIO NOT IN(SELECT UP.USUARIO FROM SEG.USUARIOS_PERMISSOES UP WHERE UP.PROGRAMA = 'LOGIN')        
-                  AND u.usuario NOT IN (SELECT usuario
-                                          FROM seg.usuarios_grupos ug
-                                         WHERE ug.grupo = " + this._grupo + @"
-                                           AND ug.usuario = u.usuario)
-			      AND U.SITUACAO <> 0 ");
+           ");
 
             FormBusca fb = new FormBusca(sql.ToString(), new List<System.Data.OracleClient.OracleParameter>(), false, "Busca por usuários", "NOME", "", "Nenhum Registro Encontrado");
             fb.ShowDialog();
@@ -214,10 +173,7 @@ namespace System.Uteis
                 {
                     sql.Clear();
                     sql.Append(@"
-                    INSERT INTO seg.usuarios_grupos ug
-                      (ug.grupo, ug.usuario, ug.admin)
-                    VALUES
-                      (" + this._grupo + ", " + usuario + ", 0)");
+                   ");
 
                     Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                     dal.ExecuteNonQuery(sql.ToString());

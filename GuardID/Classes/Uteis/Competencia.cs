@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace IntervaloCampos
 {
-	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\intervalo.ico")]
     public partial class Competencia : UserControl
     {
         public Competencia()

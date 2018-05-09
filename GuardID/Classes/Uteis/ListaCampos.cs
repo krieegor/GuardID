@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\lista.ico")]
+	[ToolboxBitmap(@"lista.ico")]
     public partial class ListaCampos : UserControl
     {
         public ListaCampos()

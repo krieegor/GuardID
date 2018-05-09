@@ -179,10 +179,7 @@ namespace Classes.Uteis
             StringBuilder sql = new StringBuilder();
             Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
 
-            sql.Append(@"SELECT C.DESCRICAO AS EMAIL, 
-                                SGA.DECRYPT(C.SENHA) AS SENHA 
-                                FROM MTD.EMAILS_CONTAS_CREDENCIAIS C 
-                                WHERE C.CREDENCIAL = 10");
+            sql.Append(@"");
             return dal.ExecuteQuery(sql.ToString());
         }
 
@@ -191,12 +188,7 @@ namespace Classes.Uteis
             StringBuilder sql = new StringBuilder();
             Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
 
-            sql.Append(@"SELECT NULL AS PROGRAMA, -- PARA VALIDACAO
-                                NULL AS DESC_PROGRAMA, -- PARA VALIDACAO
-                                S.SISTEMA, 
-                                UPPER(S.DESCRICAO) AS DESC_SISTEMA
-                           FROM SEG.SISTEMAS S
-                          WHERE S.SISTEMA = '" + codigoSistema + "'");
+            sql.Append(@"");
 
             return dal.ExecuteQuery(sql.ToString());
         }
@@ -206,13 +198,7 @@ namespace Classes.Uteis
             StringBuilder sql = new StringBuilder();
             Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
 
-            sql.Append(@"SELECT P.PROGRAMA, 
-                                INITCAP(P.DESCRICAO) AS DESC_PROGRAMA, 
-                                S.SISTEMA, 
-                                UPPER(S.DESCRICAO) AS DESC_SISTEMA
-                           FROM SEG.PROGRAMAS P
-                           JOIN SEG.SISTEMAS S ON (P.SISTEMA = S.SISTEMA)
-                          WHERE P.PROGRAMA = '" + codigoSeguranca + "'");
+            sql.Append(@"");
 
             return dal.ExecuteQuery(sql.ToString());
         }
@@ -222,35 +208,12 @@ namespace Classes.Uteis
             StringBuilder sql = new StringBuilder();
             Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
 
-            sql.Append(@"SELECT EC.DESCRICAO AS DESTINATARIO
-                           FROM SEG.SISTEMAS_RESPONSAVEIS SR
-                          INNER JOIN SEG.USUARIOS_EMAILS_CORPORATIVOS UE ON (UE.USUARIO = SR.RESPONSAVEL)
-                          INNER JOIN SEG.EMAILS_CORPORATIVOS EC ON (EC.EMAIL = UE.EMAIL)
-                          WHERE EC.EMAIL <> 2088
-                            AND NVL(EC.ATIVO, 0) = 1
-                            AND NVL(EC.DEPARTAMENTAL, 0) <> 1
-                            AND SR.SISTEMA = " + codigoSistema);
+            sql.Append(@"");
 
             return dal.ExecuteQuery(sql.ToString());
         }
 
-        //[DllImport("user32.dll")]
-        //public static extern bool ShowWindowAsync(HandleRef hWnd, int nCmdShow);
-        //[DllImport("user32.dll")]
-        //public static extern bool SetForegroundWindow(IntPtr WindowHandle);
-        //public const int SW_RESTORE = 9;
-
-        //private static void FocusPrograma()
-        //{
-        //    Process[] objProcesses = System.Diagnostics.Process.GetProcessesByName(System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
-        //    if (objProcesses.Length != 0)
-        //    {
-        //        IntPtr hWnd = IntPtr.Zero;
-        //        hWnd = objProcesses[0].MainWindowHandle;
-        //        ShowWindowAsync(new HandleRef(null, hWnd), SW_RESTORE);
-        //        SetForegroundWindow(objProcesses[0].MainWindowHandle);
-        //    }
-        //}
+     
 
         /// <summary>
         /// Insere o e-mail no banco de dados para posterior envio
@@ -304,16 +267,14 @@ namespace Classes.Uteis
                                 
                 //INSERIDO O E-MAIL
                 StringBuilder ins = new StringBuilder();
-                ins.Append(@"INSERT INTO MTD.EMAILS (REMETENTE, EMAIL_REMETENTE, EMAIL_DESTINATARIO, ASSUNTO, TIPO_MENSAGEM, IDENTIFICADOR, CREDENCIAL, PRIORIDADE, CORPO_MENSAGEM )
-                                             VALUES (:remetente, :email_remetente, :email_destinatario, :assunto, :tipo_mensagem, :identificador, :credencial, :prioridade, :corpo_mensagem)");
+                ins.Append(@"");
                 comando.CommandText = ins.ToString();
                 comando.ExecuteNonQuery();
 
                 //BUSCANDO E-MAIL INSERIDO
                 comando.Parameters.Clear();
                 StringBuilder sel = new StringBuilder();
-                sel.Append(@"SELECT MAX(E.EMAIL) AS EMAIL
-                               FROM MTD.EMAILS E");
+                sel.Append(@"");
 
                 DataTable dtEmail = new DataTable();
                 comando.CommandText = sel.ToString();
@@ -323,8 +284,7 @@ namespace Classes.Uteis
 
                 //INSERINDO O ANEXO
                 ins.Clear();
-                ins.Append(@"INSERT INTO MTD.EMAILS_ANEXOS (EMAIL, ITEM, ARQUIVO, NOME_ARQUIVO)
-                                                    VALUES (:email, :item, :arquivo, :nome_arquivo)");
+                ins.Append(@"");
                 comando.Parameters.Add(new OracleParameter("email", codigoEmail));
                 comando.Parameters.Add(new OracleParameter("item", 1));
                 comando.Parameters.Add(new OracleParameter("arquivo", convertFileToByteArray(localAnexo)));
@@ -355,31 +315,7 @@ namespace Classes.Uteis
             return codigoEmail;
         }
 
-        /// <summary>
-        /// Copia o executável (que dispara o processo de envio de e-mail) da rede para a máquina local do usuário,
-        /// pois é mais seguro rodar localmente
-        /// </summary>
-        /// <param name="codigoEmail">Código do e-mail gerado</param>
-        //public static void executaProcessoEnviaEmail(long codigoEmail)
-        //{
-        //    string exe_local = @"C:\Sistemas\EnviaEmail2\EnviaEmail.exe";
-        //    System.IO.Directory.CreateDirectory(@"C:\Sistemas\EnviaEmail2");
-        //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\EnviaEmail.exe", exe_local, true);
-        //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\ClassesConexoes.dll", @"C:\Sistemas\EnviaEmail2\ClassesConexoes.dll", true);
-        //    System.IO.File.Copy(@"S:\Sistemas dotNet\EnviaEmail\Classes.Uteis.dll", @"C:\Sistemas\EnviaEmail2\Classes.Uteis.dll", true);
-
-        //    if (System.IO.File.Exists(exe_local))
-        //    {                
-        //        string parametros = codigoEmail + " " + "1";
-        //        System.Diagnostics.Process process = System.Diagnostics.Process.Start(exe_local, parametros);
-                
-        //        while (!process.HasExited)
-        //        {
-        //            //http://msdn.microsoft.com/pt-br/library/system.windows.forms.application.doevents.aspx
-        //            Application.DoEvents();
-        //        }
-        //    }
-        //}
+      
 
         /// <summary>
         /// Converte um arquivo em vetor de bytes (util para gravar arquivos no banco) 

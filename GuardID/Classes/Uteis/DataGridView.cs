@@ -12,7 +12,6 @@ using Classes.Uteis;
 namespace System.Uteis
 {
     #region Classe DataGridViewGuard
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iDatagrid.ico")]
     public partial class DataGridViewGuard : DataGridView
     {
         public Panel pnlGridContainer { get; set; }
@@ -369,7 +368,7 @@ namespace System.Uteis
                 string texto = cell.Value.ToString();
                 teste.Tag = texto;
                 teste.Text = "Copiar Texto '" + (texto.Length > 20 ? texto.Substring(0, 20) + "..." : texto) + "'";
-                teste.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\copy 16x16.png");
+                teste.Image = new Bitmap(@"");
                 teste.Click += new EventHandler(ToolStripMenuItemCopiar_Click);
                 MenuStripOpcoes.Items.Add(teste);
             }
@@ -378,7 +377,7 @@ namespace System.Uteis
             {
                 ToolStripMenuItem menuitem = new ToolStripMenuItem();
                 menuitem.Text = "Buscar Informações";
-                menuitem.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\pesquisa 16x16.png");
+                menuitem.Image = new Bitmap("");
                 menuitem.Click += new EventHandler(ToolStripMenuItemBusca_Click);
                 MenuStripOpcoes.Items.Add(menuitem);
             }
@@ -386,7 +385,7 @@ namespace System.Uteis
             {
                 ToolStripMenuItem menuitem = new ToolStripMenuItem();
                 menuitem.Text = "Ordenação";
-                menuitem.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\iToolStripMenu16.png");
+                menuitem.Image = new Bitmap(@"");
                 menuitem.Click += new EventHandler(ToolStripMenuItemOrdenacao_Click);
                 MenuStripOpcoes.Items.Add(menuitem);
             }
@@ -399,7 +398,7 @@ namespace System.Uteis
                 {
                     ToolStripMenuItem menuitem = new ToolStripMenuItem();
                     menuitem.Text = "Calcular Totais";
-                    menuitem.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\iSomatorio40.png");
+                    menuitem.Image = new Bitmap(@"");
                     menuitem.Click += new EventHandler(ToolStripMenuItemCalcularTotais_ToolStripMenuItem);
                     MenuStripOpcoes.Items.Add(menuitem);
                 }
@@ -408,7 +407,7 @@ namespace System.Uteis
             {
                 ToolStripMenuItem menuitem = new ToolStripMenuItem();
                 menuitem.Text = "Exportar para Excel";
-                menuitem.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\iExcelDados22.png");
+                menuitem.Image = new Bitmap(@"iExcelDados22.png");
                 menuitem.Click += new EventHandler(ToolStripMenuItemExportarExcel_ToolStripMenuItem);
                 MenuStripOpcoes.Items.Add(menuitem);
             }
@@ -889,7 +888,7 @@ namespace System.Uteis
                 // 
                 colImgVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
                 colImgVer.HeaderText = "Ver";
-                colImgVer.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\iVisualizarFormulario16.png");
+                colImgVer.Image = new Bitmap(@"iVisualizarFormulario16.png");
                 colImgVer.Name = nomeColunaVer;
                 colImgVer.Width = 34;
                 // 
@@ -897,7 +896,7 @@ namespace System.Uteis
                 // 
                 colImgEditar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
                 colImgEditar.HeaderText = "Editar";
-                colImgEditar.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\iEditar22.png");
+                colImgEditar.Image = new Bitmap(@"iEditar22.png");
                 colImgEditar.Name = nomeColunaEditar;
                 colImgEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
                 colImgEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -907,7 +906,7 @@ namespace System.Uteis
                 // 
                 colImgExcluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
                 colImgExcluir.HeaderText = "Excluir";
-                colImgExcluir.Image = new Bitmap(@"S:\Sistemas dotNet\Figuras\button_cancel16.png");
+                colImgExcluir.Image = new Bitmap(@"button_cancel16.png");
                 colImgExcluir.Name = nomeColunaExcluir;
                 colImgExcluir.Width = 57;
                 #endregion

@@ -28,7 +28,7 @@ namespace Classes.Autenticacoes
                 {
                     StringBuilder sql = new StringBuilder();
 
-                    sql.Append(" SELECT SEG.F_BUSCA_AUTENTICACAO() AS AUTENTICACAO FROM DUAL");
+                    sql.Append(" ");
 
                     DataTable dt = dal.ExecuteQuery(sql.ToString());
 

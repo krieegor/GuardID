@@ -36,7 +36,7 @@ namespace Classes.Uteis
             
             dal.AddParam("dt", dt);
 
-            sql.Append("SELECT COUNT(DATA) AS TOTAL FROM SGA.FERIADOS WHERE DATA = :dt");
+            sql.Append("");
             dtDados = dal.ExecuteQuery(sql.ToString());
 
             if (int.Parse(dtDados.Rows[0]["TOTAL"].ToString()) > 0)

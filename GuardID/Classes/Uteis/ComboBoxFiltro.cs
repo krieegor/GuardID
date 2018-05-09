@@ -10,7 +10,6 @@ using System.Uteis;
 
 namespace ComboBoxFiltroGuard
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\intervalo.ico")]
     public partial class ComboBoxFiltroGuard : UserControl
     {
         public ComboBoxFiltroGuard()

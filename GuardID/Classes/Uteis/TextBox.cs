@@ -268,16 +268,7 @@ namespace System.Uteis
                 Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                 dal.AddParam("usuario", this.Text);
                 StringBuilder sql = new StringBuilder();
-                sql.Append(@"SELECT * 
-FROM 
- (
-            SELECT CASE WHEN FUN.USU_CCUSTO BETWEEN UCPC.CENTRO_CUSTO_INICIAL AND UCPC.CENTRO_CUSTO_FINAL THEN 'TRUE' ELSE 'FALSE' END VALIDACAO
-              FROM BHORA.R034FUN                       FUN 
-              JOIN BHORA.USUARIOS_CENTROS_PERMISSOES   UCP  ON (1 = 1)
-              JOIN BHORA.FORM_PESSOAL_USUARIOS_CENTROS UCPC ON (UCP.USUARIO = UCPC.USUARIO)
-              WHERE FUN.NUMCAD = &usuario AND UCP.USUARIO = USER AND UCP.TIPO_PERMISSAO = 7
- ) V
-WHERE V.VALIDACAO IS NOT NULL ");
+                sql.Append(@"");
                 bool val = false;
                 DataTable dt = dal.ExecuteQuery(sql.ToString());
 
@@ -306,20 +297,7 @@ WHERE V.VALIDACAO IS NOT NULL ");
                 Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
                 dal.AddParam("CPF", this.Text);
                 StringBuilder sql = new StringBuilder();
-                sql.Append(@"
-                SELECT * FROM 
-(
-SELECT     (
-            SELECT 'FALSE' 
-              FROM BHORA.R034FUN                       FUN 
-              JOIN BHORA.USUARIOS_CENTROS_PERMISSOES   UCP  ON (1 = 1)
-              JOIN BHORA.FORM_PESSOAL_USUARIOS_CENTROS UCPC ON (UCP.USUARIO = UCPC.USUARIO)
-              WHERE FUN.USU_CCUSTO NOT BETWEEN UCPC.CENTRO_CUSTO_INICIAL AND UCPC.CENTRO_CUSTO_FINAL
-                    AND FUN.NUMCPF = &CPF AND UCP.USUARIO = USER AND UCP.TIPO_PERMISSAO = 7
-            ) VALIDACAO
-FROM DUAL   
-) V
-WHERE V.VALIDACAO IS NOT NULL");
+                sql.Append(@"");
 
                 DataTable dt = dal.ExecuteQuery(sql.ToString());
                 if (dt.Rows.Count > 0 && !bool.Parse(dt.Rows[0]["VALIDACAO"].ToString()))

@@ -60,7 +60,7 @@ namespace System.Uteis
             InitializeComponent();
 
             _orderBy = pOrderBy;
-            _sql = " select * from ( " + pSQL + @") " + (string.IsNullOrEmpty(_orderBy) || string.IsNullOrWhiteSpace(_orderBy) ? "" : " order by " + _orderBy);
+            _sql = " ";
             _parametros = pListaParametros;
             _mensagemSemRegistro = pMensagemSemRegistro;
             //_removerAcentuacao = removerAcentuacao;
@@ -79,8 +79,6 @@ namespace System.Uteis
             else
                 this.Text = "Busca de Registro";
 
-            //if (!_BuscaRapida)
-            //{
                 ExecutarPesquisa();
 
 
@@ -97,16 +95,6 @@ namespace System.Uteis
 
                     PreencheGrid();
                 }
-            //}
-            //else
-            //{
-            //    _sql2 = _sql;
-            //    _sql = "select * from (" + _sql + ") where rownum = 0";
-
-            //    PreencheComboColuna(pColunaPrincipal);
-
-            //    PreencheCampoFiltro(pFiltroAutomatico);
-            //}
         
         }
 
@@ -919,80 +907,80 @@ namespace System.Uteis
                 case "=": //Igual
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where trunc(" + tipoFiltro + ") = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case "<>": // Diferente
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where trunc(" + tipoFiltro + ") = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case ">": // Maior
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where trunc(" + tipoFiltro + ") = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case ">=": // Maior ou Igual
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where trunc(" + tipoFiltro + ") = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case "<": // Menor
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where trunc(" + tipoFiltro + ") = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case "<=": // Menor Igual
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where trunc(" + tipoFiltro + ") = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case "L": // Like
                     if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
                 case "!L": // Not like
                     if (txtFiltro.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
 
                     return _sql;
@@ -1000,11 +988,11 @@ namespace System.Uteis
 
                     if (tipoFiltro == "System.DateTime")
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " = " + txtFiltro.Text;
+                        _sql = "";
                     }
                     else if (txtFiltroEntre1.ContemValor() && txtFiltroEntre2.ContemValor())
                     {
-                        _sql = "Select * from (" + _sql2 + ") where " + tipoFiltro + " Between" + txtFiltroEntre1.Text + " and  " + txtFiltroEntre2.Text;
+                        _sql = "";
                     }
                     return _sql;
 

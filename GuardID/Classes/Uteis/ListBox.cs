@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-    [ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iListbox.ico")]
+    [ToolboxBitmap(@"iListbox.ico")]
     public partial class ListBoxGuard : ListBox
     {
         public ListBoxGuard()
