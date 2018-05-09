@@ -399,7 +399,6 @@ namespace Classes.Uteis
 
                 object missing = Type.Missing;
                 Microsoft.Office.Interop.Excel.Worksheet ws = null;
-                Microsoft.Office.Interop.Excel.Range rng = null;
                 try
                 {
 

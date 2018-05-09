@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Classes.Autenticacoes;
 using Classes.Uteis;
 
 namespace System.Uteis
@@ -521,7 +522,7 @@ namespace System.Uteis
                 }
             }
 
-            ExportaExcel.ExportaParaExcel(dtDados, @"C:\Temp\ExportadoDoSistema_" + Classes.Entity.Globals.Sysdate.ToString().Replace(" ", "").Replace(":", "").Replace("/", "") + ".xls", true);
+            ExportaExcel.ExportaParaExcel(dtDados, @"C:\Temp\ExportadoDoSistema_" + Globals.Sysdate.ToString().Replace(" ", "").Replace(":", "").Replace("/", "") + ".xls", true);
         }
 
         private void ToolStripMenuItemCalcularTotais_ToolStripMenuItem(object sender, EventArgs e)
@@ -605,8 +606,8 @@ namespace System.Uteis
                         int horas = int.Parse(valores[0]);
                         int minutos = int.Parse(valores[1]);
 
-                        DateTime dt1 = Classes.Entity.Globals.Sysdate;
-                        DateTime dt2 = Classes.Entity.Globals.Sysdate;
+                        DateTime dt1 = Globals.Sysdate;
+                        DateTime dt2 = Globals.Sysdate;
                         dt1 = dt1.AddHours(horas);
                         dt1 = dt1.AddMinutes(minutos);
 

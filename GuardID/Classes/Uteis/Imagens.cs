@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using Microsoft.Reporting.WebForms;
+using System.Drawing;
 #pragma warning disable CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
 #pragma warning restore CS0234 // O nome de tipo ou namespace "Reporting" não existe no namespace "Microsoft" (você está sem uma referência de assembly?)
 

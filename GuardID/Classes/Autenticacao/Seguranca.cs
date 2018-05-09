@@ -78,16 +78,16 @@ namespace Classes.Autenticacoes
 
             dal.AddParam("Usuario", usuario);
 
-            sql.Append("SELECT USUARIO, ");
-            sql.Append("       PROGRAMA, ");
-            sql.Append("       PERMISSAO_QUALQUER, ");
-            sql.Append("       PERMISSAO_VISUALIZAR, ");
-            sql.Append("       PERMISSAO_INCLUIR, ");
-            sql.Append("       PERMISSAO_ALTERAR, ");
-            sql.Append("       PERMISSAO_EXCLUIR, ");
-            sql.Append("       ATIVO ");
-            sql.Append("  FROM SEG.VW_PERMISSOES VW ");
-            sql.Append(" WHERE VW.USUARIO = :Usuario ");
+            sql.Append(@"SELECT USUARIO, 
+								PROGRAMA,       
+								PERMISSAO_QUALQUER, 
+								PERMISSAO_VISUALIZAR, 
+								PERMISSAO_INCLUIR, 
+								PERMISSAO_ALTERAR, 
+								PERMISSAO_EXCLUIR, 
+								ATIVO
+								FROM SEG.VW_PERMISSOES VW 
+								WHERE VW.USUARIO = :Usuario ");
 
             dt = dal.ExecuteQuery(sql.ToString());
             foreach (DataRow dr in dt.Rows)
@@ -125,17 +125,17 @@ namespace Classes.Autenticacoes
             dal.AddParam("Usuario", usuario);
             dal.AddParam("Programa", programa);
 
-            sql.Append("SELECT USUARIO, ");
-            sql.Append("       PROGRAMA, ");
-            sql.Append("       PERMISSAO_QUALQUER, ");
-            sql.Append("       PERMISSAO_VISUALIZAR, ");
-            sql.Append("       PERMISSAO_INCLUIR, ");
-            sql.Append("       PERMISSAO_ALTERAR, ");
-            sql.Append("       PERMISSAO_EXCLUIR, ");
-            sql.Append("       ATIVO ");
-            sql.Append("  FROM SEG.VW_PERMISSOES VW ");
-            sql.Append(" WHERE VW.USUARIO = :Usuario ");
-            sql.Append("   AND VW.PROGRAMA = :Programa ");
+            sql.Append(@"SELECT USUARIO, 
+								PROGRAMA, 
+								PERMISSAO_QUALQUER, 
+								PERMISSAO_VISUALIZAR, 
+								PERMISSAO_INCLUIR, 
+								PERMISSAO_ALTERAR, 
+								PERMISSAO_EXCLUIR, 
+								ATIVO 
+								FROM SEG.VW_PERMISSOES VW 
+								WHERE VW.USUARIO = :Usuario 
+								AND VW.PROGRAMA = :Programa ");
 
             dt = dal.ExecuteQuery(sql.ToString());
 

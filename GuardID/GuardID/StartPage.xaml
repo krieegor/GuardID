@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:GuardID;assembly=GuardID"
              x:Class="GuardID.StartPage" >
-    <ContentPage.BackgroundImage>
+    <!--<ContentPage.BackgroundImage>
         <OnPlatform x:TypeArguments="ImageSource">
             <OnPlatform.Android>
                 background
             </OnPlatform.Android>
         </OnPlatform>
-    </ContentPage.BackgroundImage>
+    </ContentPage.BackgroundImage>-->
     <StackLayout>
         
         <Label Text="{Binding Descricao}"

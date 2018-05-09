@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Classes.Autenticacoes;
+using Classes.Conexoes;
+using System;
 using System.Data;
 using System.Text;
 

@@ -145,8 +145,7 @@ namespace Classes.Uteis
                     ref missing, ref missing, ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing, ref missing, ref missing);
 
-                if (abrirArquivo)
-                    Arquivos.AbrirArquivo(caminhoDestino);
+                
             }
             catch (Exception)
             {

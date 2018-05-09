@@ -59,11 +59,11 @@ namespace System.Uteis
                         {
                             waitScreen.Invoke(new MethodInvoker(CloseWindow));
                         }
-                        catch (NullReferenceException nREx)
+                        catch (NullReferenceException )
                         {
                             //throw new Exception("Erro ao chamar waitScreen.Invoke null reference - WaitWindow: " + nREx.Message);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             //throw new Exception("Erro ao chamar waitScreen.Invoke exception - WaitWindow: " + ex.Message);
                         }
@@ -83,7 +83,6 @@ namespace System.Uteis
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
             ManualResetEvent event2 = (ManualResetEvent)parameter;
             Application.EnableVisualStyles();
-            waitScreen = new frmAguarde(message);
             waitScreen.Tag = event2;
             waitScreen.FormClosing += new FormClosingEventHandler(WaitScreenClosing);
             waitScreen.Shown += new EventHandler(WaitScreenShown);

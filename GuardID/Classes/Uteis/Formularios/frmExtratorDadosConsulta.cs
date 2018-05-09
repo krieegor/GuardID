@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Uteis;
+using Classes.Conexoes;
+using Classes.Autenticacoes;
 
 namespace System.Uteis
 {
@@ -100,7 +102,7 @@ namespace System.Uteis
 
         private static DataTable BuscaExtratorDadosComandoConsulta(string pFiltroLike, int pSistema, bool buscaSQL)
         {
-            ClassesConexoes.Conexao dal = new ClassesConexoes.Conexao(Classes.Entity.Globals.GetStringConnection(), 2);
+            Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
 
             dal.AddParam("pSistema", pSistema);
             StringBuilder sql;

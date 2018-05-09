@@ -193,7 +193,7 @@
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(217)))), ((int)(((byte)(241)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.Image = global::System.Uteis.Properties.Resources.iBusca16;
+            this.btnFiltrar.Image = global::Classes.Uteis.Properties.Resources.iBusca16;
             this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFiltrar.Location = new System.Drawing.Point(664, 12);
             this.btnFiltrar.Name = "btnFiltrar";

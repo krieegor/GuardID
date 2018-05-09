@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace System.Uteis
 {
-	[ToolboxBitmap(@"S:\Sistemas dotNet\Figuras\iTextbox.ico")]
+	
     public partial class TextBoxGuard : TextBox
     {
         /// <summary>
@@ -168,9 +168,9 @@ namespace System.Uteis
             if (this._ExibirIconePesquisa && this.pb == null)
             {
                 this.pb = new PictureBox();
-                this.pb.Size = new Size(16, this.ClientSize.Height + 2);
+                this.pb.Size = new Size(16, this.ClientSize.Height	+ 2);
                 this.pb.Cursor = Cursors.Hand;
-                this.pb.Image = Properties.Resources.iBusca16;
+                this.pb.Image = Classes.Uteis.Properties.Resources.iBusca16;
                 this.pb.Click += pb_Click;
             }
 

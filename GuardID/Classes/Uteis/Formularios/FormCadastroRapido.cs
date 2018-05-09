@@ -233,7 +233,7 @@ namespace System.Uteis
         }
 
 #pragma warning disable CS0108 // "FormCadastroRapido.MensagemCampoVazio(MaskedTextBoxDataGuard, string)" oculta o membro herdado "FormCadastro.MensagemCampoVazio(MaskedTextBoxDataGuard, string)". Use a nova palavra-chave se foi pretendido ocultar.
-        public static bool MensagemCampoVazio(MaskedTextBoxDataGuard txt, string mensagem)
+        public static bool MensagemCampoVazio(MaskedTextBoxGuard txt, string mensagem)
 #pragma warning restore CS0108 // "FormCadastroRapido.MensagemCampoVazio(MaskedTextBoxDataGuard, string)" oculta o membro herdado "FormCadastro.MensagemCampoVazio(MaskedTextBoxDataGuard, string)". Use a nova palavra-chave se foi pretendido ocultar.
         {
             if (IsFormClosing() == true)

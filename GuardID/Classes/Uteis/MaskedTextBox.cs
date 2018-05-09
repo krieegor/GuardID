@@ -221,7 +221,7 @@ namespace System.Uteis
                 this.pb = new PictureBox();
                 this.pb.Size = new Size(16, this.ClientSize.Height + 2);
                 this.pb.Cursor = Cursors.Hand;
-                this.pb.Image = Properties.Resources.iBusca16;
+                this.pb.Image = Classes.Uteis.Properties.Resources.iBusca16;
                 this.pb.Click += pb_Click;
             }
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.IO;
 
+
 namespace Classes.Uteis
 {
     public static class ImprimeLPT1
@@ -17,7 +18,7 @@ namespace Classes.Uteis
         private static StreamWriter GetStreamWriter(string port)
         {
             IntPtr hFich = CreateFile(port, GENERIC_WRITE, 0, IntPtr.Zero, OPEN_EXISTING, 0, IntPtr.Zero);
-            FileStream stream = new FileStream(hFich, FileAccess.Write);
+            FileStream stream = new FileStream(hFich,FileAccess.Write);
             StreamWriter writer = new StreamWriter(stream);
             return writer;
         }

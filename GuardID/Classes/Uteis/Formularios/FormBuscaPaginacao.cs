@@ -11,7 +11,8 @@ namespace System.Uteis
 {
 	public partial class FormBuscaPaginacao : FormBasic
     {
-        private string _sql, _sql2;
+        private string _sql;
+		private string _sql2;
         private List<OracleParameter> _parametros;
         private string _mensagemSemRegistro;
         //private bool _removerAcentuacao;
@@ -49,10 +50,8 @@ namespace System.Uteis
         private int QtdeRegistrosPagina;
         private int _QtdeRegistrosPaginaConstante;
 
-        private DataTable _ColunasData;
         private Boolean _AutoExecutar;
         private Boolean _BuscaRapida;
-        private bool validaFiltros = false;
          
         public FormBuscaPaginacao(string pSQL, List<OracleParameter> pListaParametros,Boolean pAutoExecutar, Boolean pBuscaRapida, string pTitulo, string pColunaPrincipal, string pFiltroAutomatico, 
                                   string pMensagemSemRegistro, string pOrderBy, int pQtdeRegistrosPorPagina)

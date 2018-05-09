@@ -6,7 +6,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Data.OracleClient;
+using Devart.Data.Oracle;
 using Classes.Autenticacoes;
 using Classes.Conexoes;
 

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Classes.Autenticacoes;
+using System.Windows.Forms;
 
 namespace System.Uteis
 {

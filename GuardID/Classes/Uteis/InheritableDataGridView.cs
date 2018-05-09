@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace System.Uteis
 {
-    [Designer(typeof(ControlDesigner))]
+    
     public class InheritableDataGridView : DataGridViewGuard
     {
         public InheritableDataGridView()

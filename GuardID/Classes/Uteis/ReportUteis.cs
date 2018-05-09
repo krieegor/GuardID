@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Reporting.WebForms;
 using System.IO;
 
 namespace Classes.Uteis
@@ -6,7 +7,7 @@ namespace Classes.Uteis
 
 
 #pragma warning disable CS0246 // O nome do tipo ou do namespace "IReportViewerMessages" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)
-    public class ReportViewerMensagens : IReportViewerMessages
+    public class ReportViewerMensagens : IReportViewerMessages3
 #pragma warning restore CS0246 // O nome do tipo ou do namespace "IReportViewerMessages" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)
     {
 
@@ -396,9 +397,58 @@ namespace Classes.Uteis
 
         }
 
-#endregion
+		public string CancelLinkText => throw new System.NotImplementedException();
 
-    }
+		public string CalendarLoading => throw new System.NotImplementedException();
+
+		public string ClientNoScript => throw new System.NotImplementedException();
+
+		public string ClientPrintControlLoadFailed => throw new System.NotImplementedException();
+
+		public string ParameterDropDownToolTip => throw new System.NotImplementedException();
+
+		public string TodayIs => throw new System.NotImplementedException();
+
+		public string ExportFormatsToolTip => throw new System.NotImplementedException();
+
+		public string ExportButtonText => throw new System.NotImplementedException();
+
+		public string SelectFormat => throw new System.NotImplementedException();
+
+		public string DocumentMap => throw new System.NotImplementedException();
+
+		public string InvalidPageNumber => throw new System.NotImplementedException();
+
+		public string ChangeCredentialsToolTip => throw new System.NotImplementedException();
+
+		public string CredentialMissingUserNameError(string dataSourcePrompt)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public string GetLocalizedNameForRenderingExtension(string format)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public string ParameterMissingSelectionError(string parameterPrompt)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public string ParameterMissingValueError(string parameterPrompt)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public string TotalPages(int pageCount, PageCountMode pageCountMode)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		#endregion
+
+	}
 
     public class ReportUteis
     {

@@ -2,26 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.OracleClient;
-using System.Windows.Forms;
 using System.Text;
 using System.Web;
-using System.Configuration;
+using Devart.Data.Oracle;
+
 
 /// <summary>
 /// Classe para conexão com o Banco de Dados
 /// </summary>
 namespace Classes.Conexoes
 {
-    public class Conexao
+	public class Conexao
     {
-#pragma warning disable CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
         OracleConnection _conn;
-#pragma warning restore CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
         OracleCommand _cmd;
-#pragma warning restore CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-        //OracleTransaction _trans;
 
         int _totalLinhas, _tipoConexao;
         string _sql;
@@ -58,14 +52,12 @@ namespace Classes.Conexoes
         /// </summary>
         public Conexao()
         {
-#pragma warning disable CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
             _conn = new OracleConnection(System.Configuration.ConfigurationManager.ConnectionStrings[HttpContext.Current.Session["conexao"].ToString()].ConnectionString.Replace("USUARIO", HttpContext.Current.Session["usuario"].ToString()).Replace("SENHA", HttpContext.Current.Session["senha"].ToString()));
-#pragma warning restore CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-            _cmd = new OracleCommand();
-#pragma warning restore CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-            _cmd.Connection = this._conn;
-            TotalLinhas = 0;
+			_cmd = new OracleCommand
+			{
+				Connection = this._conn
+			};
+			TotalLinhas = 0;
             TipoConexao = 1;
             this.Open();
         }
@@ -77,14 +69,12 @@ namespace Classes.Conexoes
         /// <param name="tipo">Tipo de conexão [1: Web, 2: WinForms, 3: Console]</param>
         public Conexao(String connStr, int tipo)
         {
-#pragma warning disable CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
             _conn = new OracleConnection(connStr);
-#pragma warning restore CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-            _cmd = new OracleCommand();
-#pragma warning restore CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-            _cmd.Connection = _conn;
-            TipoConexao = tipo;
+			_cmd = new OracleCommand
+			{
+				Connection = _conn
+			};
+			TipoConexao = tipo;
         }
 
         /// <summary>
@@ -157,17 +147,8 @@ namespace Classes.Conexoes
 
             #region Gravar erro no LOG
 
-            //OracleConnection _connErro = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=acad-scan.Guard.br)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=acad)(SERVER=DEDICATED)));User Id=perfil;Password=pe_#_mstr_yoda;");
-#pragma warning disable CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
             OracleConnection _connErro = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=acad-scan.Guard.br)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=acad)(SERVER=DEDICATED)));User Id=perweb;Password=#-+vER9%8Z;");
-#pragma warning restore CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning restore CS0618 // "OracleConnection" é obsoleto: "OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
             OracleCommand _cmdErro = new OracleCommand();
-#pragma warning restore CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning restore CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
             OracleParameter op = null;
             StringBuilder parametros = new StringBuilder();
 
@@ -202,7 +183,7 @@ namespace Classes.Conexoes
                     {
                         op = new OracleParameter("sql", _cmd.CommandText);
                     }
-                    op.OracleType = OracleType.Clob;
+                    op.OracleDbType = OracleDbType.Clob;
                     _cmdErro.Parameters.Add(op);
 
                     foreach (OracleParameter p in _cmd.Parameters)
@@ -221,7 +202,7 @@ namespace Classes.Conexoes
                     {
                         op = new OracleParameter("param", parametros.ToString());
                     }
-                    op.OracleType = OracleType.Clob;
+                    op.OracleDbType = OracleDbType.Clob;
                     _cmdErro.Parameters.Add(op);
 
                     _cmdErro.ExecuteNonQuery();
@@ -229,7 +210,7 @@ namespace Classes.Conexoes
                     _cmdErro.Parameters.Clear();
 
                     _cmdErro.CommandText = "SELECT logdb.seq_log_erros.currval AS CODIGO FROM logdb.log_erros ";
-                    codErro = Int32.Parse(_cmdErro.ExecuteOracleScalar().ToString());
+                    codErro = Int32.Parse(_cmdErro.ExecuteScalar().ToString());
 
                     _connErro.Close();
                 }
@@ -273,9 +254,6 @@ namespace Classes.Conexoes
                     }
                     else
                     {
-                        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), Guid.NewGuid().ToString(), "alert('Olá! mensagem no ajax!!!!!');", true); 
-                        //"<script type='text/javascript'>alert('" + msgErro.Replace('\n', ' ') + "');</script>" + msgErro.Replace("\n", "<br />")
-                        //System.Web.HttpContext.Current.Response.Redirect("/" + System.Web.HttpContext.Current.Request.Url.Segments[1] + "Erro/?msg="+msgErro.Replace("\n","§"));
                         System.Web.HttpContext.Current.Response.Redirect("http://sis.Guard.br/Erro/?cod=" + codErro.ToString());
                         System.Web.HttpContext.Current.Response.End();
                     }
@@ -428,7 +406,7 @@ namespace Classes.Conexoes
             try
             {
                 this.Open();
-                resultado = _cmd.ExecuteOracleScalar();
+                resultado = _cmd.ExecuteScalar();
             }
             catch (OracleException e)
             {
@@ -487,11 +465,7 @@ namespace Classes.Conexoes
             {
                 this.Open();
 
-#pragma warning disable CS0618 // "OracleDataAdapter" é obsoleto: "OracleDataAdapter has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning disable CS0618 // "OracleDataAdapter" é obsoleto: "OracleDataAdapter has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
                 OracleDataAdapter oda = new OracleDataAdapter(_cmd);
-#pragma warning restore CS0618 // "OracleDataAdapter" é obsoleto: "OracleDataAdapter has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
-#pragma warning restore CS0618 // "OracleDataAdapter" é obsoleto: "OracleDataAdapter has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
                 oda.Fill(dt);
                 TotalLinhas = dt.Rows.Count;
             }
@@ -602,9 +576,11 @@ namespace Classes.Conexoes
 
         public void AddParam(String paramNome, Object paramValor, ParameterDirection direction)
         {
-            OracleParameter oParam = new OracleParameter(paramNome, paramValor);
-            oParam.Direction = direction;
-            _cmd.Parameters.Add(oParam);
+			OracleParameter oParam = new OracleParameter(paramNome, paramValor)
+			{
+				Direction = direction
+			};
+			_cmd.Parameters.Add(oParam);
 
         }
 
@@ -616,7 +592,7 @@ namespace Classes.Conexoes
             else
             {
                 int x = int.Parse(size.ToString());
-                OracleType TipoCampo = (OracleType)paramValor;
+                OracleDbType TipoCampo = (OracleDbType)paramValor;
                 oParam = new OracleParameter(paramNome, TipoCampo, x);
             }
             oParam.Direction = direction;
@@ -673,9 +649,7 @@ namespace Classes.Conexoes
 
             //Alista o command na transação atual.
 
-#pragma warning disable CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
             OracleCommand comando = _conn.CreateCommand();
-#pragma warning restore CS0618 // "OracleCommand" é obsoleto: "OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260"
 
             comando.Transaction = transacao;
 

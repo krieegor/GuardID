@@ -14,8 +14,6 @@ namespace System.Uteis
 {
 	public partial class frmExtratorDados : FormProcesso
     {
-        private DataTable dtFinal;
-        private DataColumn column;
         private int Sistema;
 
         public frmExtratorDados()

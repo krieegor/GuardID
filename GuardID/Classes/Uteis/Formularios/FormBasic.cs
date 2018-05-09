@@ -419,15 +419,7 @@ namespace System.Uteis
                                                     PreencherPropriedades(frmCadastro, propriedades, valores);
                                                     frmCadastro.ShowDialog();
                                                 }
-                                                break;
-                                            case "System.Uteis.FormRelatorioCompleto":
-                                                FormRelatorioCompleto frmRelatorioCompleto = (FormRelatorioCompleto)Activator.CreateInstance(type);
-                                                if (frmRelatorioCompleto.Name.Equals(formName))
-                                                {
-                                                    PreencherPropriedades(frmRelatorioCompleto, propriedades, valores);
-                                                    frmRelatorioCompleto.ShowDialog();
-                                                }
-                                                break;
+                                                break;                                           
                                             case "System.Uteis.FormBusca":
                                                 FormBusca frmBusca = (FormBusca)Activator.CreateInstance(type);
                                                 if (frmBusca.Name.Equals(formName))
@@ -752,11 +744,7 @@ namespace System.Uteis
                     ((ListBoxGuard)(pControle)).Items.Clear();
                 }
                 return;
-            }
-            if (pControle is ListaCampos1)
-            {
-                ((ListaCampos1)pControle).listGeral.Items.Clear();
-            }
+            }           
             if (pControle.HasChildren)
                 LimpaCampos(pControle.Controls);
         }

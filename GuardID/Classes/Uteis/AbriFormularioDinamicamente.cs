@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using Classes.Autenticacoes;
 using Classes.Uteis;
 
 namespace Classes.Uteis
@@ -28,53 +29,6 @@ namespace Classes.Uteis
             }
         }
 
-        /// <summary>
-        /// Abre um formulário do FoxPro
-        /// </summary>
-        /// <param name="executavel">Objeto de referencia do executavel onde se encontra o formulário</param>
-        /// <param name="comandoExecFox">Comando utilizado dentro do fox para executar o formulário (concatenar os parametros necessários), aspas no inicio e no fim da string</param>
-        public static void OpenFormFoxPro(ExecutaveisFoxPro executavel, string comandoExecFox)
-        {
-            if (!System.IO.File.Exists(executavel.getCaminhoRede()))
-            {
-                MessageBox.Show("O caminho '" + executavel.getCaminhoRede() + "' não é válido. Por favor, contate o núcleo de TI.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (!System.IO.File.Exists(executavel.getCaminhoLocal()))
-                    File.Copy(executavel.getCaminhoRede(), executavel.getCaminhoLocal());
-                else
-                {
-                    FileInfo rede = new FileInfo(executavel.getCaminhoRede());
-                    FileInfo local = new FileInfo(executavel.getCaminhoLocal());
-                    if (rede.LastWriteTime != local.LastWriteTime)
-                    {
-                        try
-                        {
-                            File.Delete(executavel.getCaminhoLocal());
-                            File.Copy(executavel.getCaminhoRede(), executavel.getCaminhoLocal());
-                        }
-                        catch (Exception)
-                        {
-                            //Caso de algum erro ao deletar ou copiar utiliza a versão atual local
-                            //Catch apenas para não lançar exceção
-                        }
-                    }
-                }
-
-                string usuario = Globals.Usuario.ToString();
-                string senha = Globals.Login;
-                string conexao = Globals.Conexao.Equals("TESTE") ? "DBTESTE" : Globals.Conexao;
-                string parametros = usuario + " " + senha + " " + conexao + " " + comandoExecFox;
-
-                System.Diagnostics.Process process = System.Diagnostics.Process.Start(executavel.getCaminhoLocal(), parametros);
-
-                while (!process.HasExited)
-                {
-                    //http://msdn.microsoft.com/pt-br/library/system.windows.forms.application.doevents.aspx
-                    Application.DoEvents();
-                }
-            }
-        }
+       
     }
 }

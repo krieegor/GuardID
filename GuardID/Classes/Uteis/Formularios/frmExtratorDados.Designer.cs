@@ -581,35 +581,7 @@ namespace System.Uteis
             this.mtxtPeriodoInicio.TipoCampo = System.Uteis.MaskedTextBoxDataGuard.CTipoCampo.Normal;
             this.mtxtPeriodoInicio.Visible = false;
             // 
-            // mtxtCompetenciaInicial
-            // 
-            this.mtxtCompetenciaInicial.BackColor = System.Drawing.Color.White;
-            this.mtxtCompetenciaInicial.ExibirIconePesquisa = false;
-            this.mtxtCompetenciaInicial.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtCompetenciaInicial.LimpaCampo = true;
-            this.mtxtCompetenciaInicial.Location = new System.Drawing.Point(89, 53);
-            this.mtxtCompetenciaInicial.Mask = "00/0000";
-            this.mtxtCompetenciaInicial.Name = "mtxtCompetenciaInicial";
-            this.mtxtCompetenciaInicial.NomeCampoDadosDataTable = null;
-            this.mtxtCompetenciaInicial.Size = new System.Drawing.Size(84, 21);
-            this.mtxtCompetenciaInicial.TabIndex = 3;
-            this.mtxtCompetenciaInicial.TipoCampo = System.Uteis.MaskedTextBoxDataGuard.CTipoCampo.Normal;
-            this.mtxtCompetenciaInicial.Visible = false;
-            // 
-            // mtxtCompetenciaFinal
-            // 
-            this.mtxtCompetenciaFinal.BackColor = System.Drawing.Color.White;
-            this.mtxtCompetenciaFinal.ExibirIconePesquisa = false;
-            this.mtxtCompetenciaFinal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtCompetenciaFinal.LimpaCampo = true;
-            this.mtxtCompetenciaFinal.Location = new System.Drawing.Point(200, 53);
-            this.mtxtCompetenciaFinal.Mask = "00/0000";
-            this.mtxtCompetenciaFinal.Name = "mtxtCompetenciaFinal";
-            this.mtxtCompetenciaFinal.NomeCampoDadosDataTable = null;
-            this.mtxtCompetenciaFinal.Size = new System.Drawing.Size(84, 21);
-            this.mtxtCompetenciaFinal.TabIndex = 4;
-            this.mtxtCompetenciaFinal.TipoCampo = System.Uteis.MaskedTextBoxDataGuard.CTipoCampo.Normal;
-            this.mtxtCompetenciaFinal.Visible = false;
+           
             // 
             // txtValorFiltroSemPesquisa
             // 

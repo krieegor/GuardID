@@ -61,6 +61,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.1926.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=9.5.502.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Devart\dotConnect\Oracle\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -69,6 +77,15 @@
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -89,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbriFormularioDinamicamente.cs" />
-    <Compile Include="Arquivos.cs" />
     <Compile Include="Button.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -202,7 +218,9 @@
     <Compile Include="Formularios\FormFundoPrincipal.designer.cs">
       <DependentUpon>FormFundoPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormInputBox.cs" />
+    <Compile Include="Formularios\FormInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FormInputBox.designer.cs">
       <DependentUpon>FormInputBox.cs</DependentUpon>
     </Compile>
@@ -229,30 +247,6 @@
     </Compile>
     <Compile Include="Formularios\FormProcesso.Designer.cs">
       <DependentUpon>FormProcesso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorio.Designer.cs">
-      <DependentUpon>FormRelatorio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioCompleto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioCompleto.Designer.cs">
-      <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioOld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormRelatorioOld.Designer.cs">
-      <DependentUpon>FormRelatorioOld.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmAguarde.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmAguarde.designer.cs">
-      <DependentUpon>frmAguarde.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmAuditoriaFormulario.cs">
       <SubType>Form</SubType>
@@ -417,6 +411,11 @@
       <DependentUpon>Panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -525,18 +524,6 @@
     <EmbeddedResource Include="Formularios\FormProcesso.resx">
       <DependentUpon>FormProcesso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormRelatorio.resx">
-      <DependentUpon>FormRelatorio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormRelatorioCompleto.resx">
-      <DependentUpon>FormRelatorioCompleto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormRelatorioOld.resx">
-      <DependentUpon>FormRelatorioOld.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmAguarde.resx">
-      <DependentUpon>frmAguarde.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmAuditoriaFormulario.resx">
       <DependentUpon>frmAuditoriaFormulario.cs</DependentUpon>
     </EmbeddedResource>
@@ -597,6 +584,10 @@
     <EmbeddedResource Include="MaskedTextBoxFone.resx">
       <DependentUpon>MaskedTextBoxFone.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TextBox.resx">
       <DependentUpon>TextBox.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -611,6 +602,111 @@
       <Project>{66b4676b-9bd7-475e-8b26-f4e1866f67cd}</Project>
       <Name>Conexoes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajax-loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra_escura.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_fechar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_fechar_vermelho.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_fechar_vermelho1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_fechar_vermelho11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_fechar1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_minimizar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_minimizar1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_ok.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_ok1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao_ok2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-manager32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtk-refresh32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iBusca16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loader_azul.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading52.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\senha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\senha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\senha1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\senha11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
