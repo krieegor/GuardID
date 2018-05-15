@@ -84,8 +84,8 @@ namespace Classes.Autenticacoes
         public static string GetStringConnection()
         {
             string stringConnection = string.Empty;
-            if (Globals.Conexao == "localhost")
-                stringConnection = "Data Source" + GetConectionString("localhost.guardId", "#FIMLOCALHOST#") + ";User Id=" + Globals.Usuario.ToString() + ";Password=" + Globals.Login;           
+            if (Globals.Conexao == "LOCALHOST")
+                stringConnection = "Data Source" + GetConectionString("localhost.GUARDID", "#FIMLOCALHOST#") + ";User Id=" + Globals.Usuario.ToString() + ";Password=" + Globals.Login;           
             return stringConnection;
         }
 
@@ -93,7 +93,7 @@ namespace Classes.Autenticacoes
         {
             string stringConnection = string.Empty;
             if (pConexao == "localhost")
-                stringConnection = "Data Source" + GetConectionString("localhost.guardId", "#FIMLOCALHOST#") + ";User Id=" + pUsuario + ";Password=" + pLogin;            
+                stringConnection = "Data Source" + GetConectionString("localhost.GUARDID", "#FIMLOCALHOST#") + ";User Id=" + pUsuario + ";Password=" + pLogin;            
             return stringConnection;
         }
 

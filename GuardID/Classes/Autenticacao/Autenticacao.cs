@@ -12,7 +12,7 @@ namespace Classes.Autenticacoes
             {
                 int usuario;
                 string senha, conexao;
-                Globals.Conexao = "Guardid";
+                Globals.Conexao = "GUARDID";
                 Globals.Usuario = 0001;
                 Globals.Login = "";
 

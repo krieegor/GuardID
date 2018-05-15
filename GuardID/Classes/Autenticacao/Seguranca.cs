@@ -69,7 +69,8 @@ namespace Classes.Autenticacoes
         /// <param name="usuario">Código do Usuário</param>
         /// <returns>Lista de Permissões</returns>
         public List<Seguranca> BuscaPermissoes(int usuario)
-        {
+        {			
+
             DataTable dt = new DataTable();
             Conexao dal = new Conexao(Globals.GetStringConnection(), 2);
             StringBuilder sql = new StringBuilder();
@@ -83,18 +84,19 @@ namespace Classes.Autenticacoes
             dt = dal.ExecuteQuery(sql.ToString());
             foreach (DataRow dr in dt.Rows)
             {
-                seg = new Seguranca();
+				seg = new Seguranca
+				{
+					Usuario = int.Parse(dr["USUARIO"].ToString()),
+					Programa = dr["PROGRAMA"].ToString(),
+					Qualquer = (dr["PERMISSAO_QUALQUER"].ToString() == "1") ? true : false,
+					Visualizar = (dr["PERMISSAO_VISUALIZAR"].ToString() == "1") ? true : false,
+					Incluir = (dr["PERMISSAO_INCLUIR"].ToString() == "1") ? true : false,
+					Alterar = (dr["PERMISSAO_ALTERAR"].ToString() == "1") ? true : false,
+					Excluir = (dr["PERMISSAO_EXCLUIR"].ToString() == "1") ? true : false,
+					Ativo = (dr["ATIVO"].ToString() == "1") ? true : false
+				};
 
-                seg.Usuario = int.Parse(dr["USUARIO"].ToString());
-                seg.Programa = dr["PROGRAMA"].ToString();
-                seg.Qualquer = (dr["PERMISSAO_QUALQUER"].ToString() == "1") ? true : false;
-                seg.Visualizar = (dr["PERMISSAO_VISUALIZAR"].ToString() == "1") ? true : false;
-                seg.Incluir = (dr["PERMISSAO_INCLUIR"].ToString() == "1") ? true : false;
-                seg.Alterar = (dr["PERMISSAO_ALTERAR"].ToString() == "1") ? true : false;
-                seg.Excluir = (dr["PERMISSAO_EXCLUIR"].ToString() == "1") ? true : false;
-                seg.Ativo = (dr["ATIVO"].ToString() == "1") ? true : false;
-
-                lseg.Add(seg);
+				lseg.Add(seg);
             }
 
             return lseg;
