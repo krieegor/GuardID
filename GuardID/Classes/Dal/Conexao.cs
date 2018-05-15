@@ -19,11 +19,11 @@ namespace Classes.Conexoes
 
         int _totalLinhas, _tipoConexao;
         string _sql;
-
-        /// <summary>
-        /// Total de linhas afetadas na execução da SQL
-        /// </summary>
-        public int TotalLinhas
+		
+		/// <summary>
+		/// Total de linhas afetadas na execução da SQL
+		/// </summary>
+		public int TotalLinhas
         {
             get { return _totalLinhas; }
             set { _totalLinhas = value; }
@@ -47,15 +47,18 @@ namespace Classes.Conexoes
             set { _sql = value; }
         }
 
-        /// <summary>
-        /// Contrutor da Classe padrão, faz a conexão sem precisar passar paramentro da connection string
-        /// </summary>
-        public Conexao()
+		public OracleConnection Conn { get => _conn; set => _conn = value; }
+		public OracleCommand Cmd { get => _cmd; set => _cmd = value; }
+
+		/// <summary>
+		/// Contrutor da Classe padrão, faz a conexão sem precisar passar paramentro da connection string
+		/// </summary>
+		public Conexao()
         {
-            _conn = new OracleConnection(System.Configuration.ConfigurationManager.ConnectionStrings[HttpContext.Current.Session["conexao"].ToString()].ConnectionString.Replace("USUARIO", HttpContext.Current.Session["usuario"].ToString()).Replace("SENHA", HttpContext.Current.Session["senha"].ToString()));
-			_cmd = new OracleCommand
+			Conn = new OracleConnection(System.Configuration.ConfigurationManager.ConnectionStrings[HttpContext.Current.Session["conexao"].ToString()].ConnectionString.Replace("USUARIO", HttpContext.Current.Session["usuario"].ToString()).Replace("SENHA", HttpContext.Current.Session["senha"].ToString()));
+			Cmd = new OracleCommand
 			{
-				Connection = this._conn
+				Connection = this.Conn
 			};
 			TotalLinhas = 0;
             TipoConexao = 1;
@@ -69,10 +72,10 @@ namespace Classes.Conexoes
         /// <param name="tipo">Tipo de conexão [1: Web, 2: WinForms, 3: Console]</param>
         public Conexao(String connStr, int tipo)
         {
-            _conn = new OracleConnection(connStr);
-			_cmd = new OracleCommand
+            Conn = new OracleConnection(connStr);
+			Cmd = new OracleCommand
 			{
-				Connection = _conn
+				Connection = Conn
 			};
 			TipoConexao = tipo;
         }
@@ -87,8 +90,8 @@ namespace Classes.Conexoes
 
             try
             {
-                _conn.Open();
-                _conn.Close();
+                Conn.Open();
+                Conn.Close();
                 resposta = true;
             }
             catch (OracleException)
@@ -106,11 +109,9 @@ namespace Classes.Conexoes
         {
             try
             {
-                if (_conn.State == ConnectionState.Closed)
+                if (Conn.State == ConnectionState.Closed)
                 {
-                    _conn.Open();
-                    //_trans = _conn.BeginTransaction();
-                    //_cmd.Transaction = _trans;
+                    Conn.Open();
                 }
             }
             catch (OracleException e)
@@ -127,9 +128,8 @@ namespace Classes.Conexoes
         {
             try
             {
-                _cmd.Parameters.Clear();
-                //_trans.Commit();
-                _conn.Close();
+                Cmd.Parameters.Clear();
+                Conn.Close();
             }
             catch (OracleException e)
             {
@@ -145,9 +145,9 @@ namespace Classes.Conexoes
         {
             int codErro = 0;
 
-            #region Gravar erro no LOG
+			#region Gravar erro no LOG			
 
-            OracleConnection _connErro = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=acad-scan.Guard.br)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=acad)(SERVER=DEDICATED)));User Id=perweb;Password=#-+vER9%8Z;");
+			OracleConnection _connErro = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localHost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=GUARDID)(SERVER=DEDICATED)));User Id=perweb;Password=#-+vER9%8Z;");
             OracleCommand _cmdErro = new OracleCommand();
             OracleParameter op = null;
             StringBuilder parametros = new StringBuilder();
@@ -163,30 +163,30 @@ namespace Classes.Conexoes
                     _cmdErro.CommandText = "";
                     _cmdErro.CommandType = CommandType.Text;
 
-                    if (System.Web.HttpContext.Current.Session["usuario"] != null)
+                    if (HttpContext.Current.Session["usuario"] != null)
                     {
-                        _cmdErro.Parameters.Add(new OracleParameter("usuario", System.Web.HttpContext.Current.Session["usuario"]));
+                        _cmdErro.Parameters.Add(new OracleParameter("usuario", HttpContext.Current.Session["usuario"]));
                     }
                     else
                     {
-                        _cmdErro.Parameters.Add(new OracleParameter("usuario", System.Web.HttpContext.Current.Session["usuario_erro"]));
+                        _cmdErro.Parameters.Add(new OracleParameter("usuario", HttpContext.Current.Session["usuario_erro"]));
                     }
                     _cmdErro.Parameters.Add(new OracleParameter("cod", e.Code));
                     _cmdErro.Parameters.Add(new OracleParameter("mensagem", e.Message));
                     _cmdErro.Parameters.Add(new OracleParameter("stack", e.StackTrace));
-                    _cmdErro.Parameters.Add(new OracleParameter("ip", System.Web.HttpContext.Current.Request.UserHostAddress));
-                    if (String.IsNullOrEmpty(_cmd.CommandText))
+                    _cmdErro.Parameters.Add(new OracleParameter("ip", HttpContext.Current.Request.UserHostAddress));
+                    if (String.IsNullOrEmpty(Cmd.CommandText))
                     {
                         op = new OracleParameter("sql", OracleLob.Null);
                     }
                     else
                     {
-                        op = new OracleParameter("sql", _cmd.CommandText);
+                        op = new OracleParameter("sql", Cmd.CommandText);
                     }
                     op.OracleDbType = OracleDbType.Clob;
                     _cmdErro.Parameters.Add(op);
 
-                    foreach (OracleParameter p in _cmd.Parameters)
+                    foreach (OracleParameter p in Cmd.Parameters)
                     {
                         parametros.Append(p.ParameterName);
                         parametros.Append(" = ");
@@ -220,6 +220,7 @@ namespace Classes.Conexoes
                 throw erro;
             }
             #endregion
+
             string msgErro2 = e.Message;
             if (e.InnerException != null)
                 msgErro2 = e.InnerException.ToString();
@@ -239,14 +240,14 @@ namespace Classes.Conexoes
 
                         if (e.Code == 01017)
                         {
-                            System.Web.HttpContext.Current.Session.Add("erro", "1");
+							HttpContext.Current.Session.Add("erro", "1");
                         }
                         else
                         {
-                            System.Web.HttpContext.Current.Session.Add("erro", "3");
+							HttpContext.Current.Session.Add("erro", "3");
                         }
-                        System.Web.HttpContext.Current.Response.Redirect(url);
-                        System.Web.HttpContext.Current.Response.End();
+						HttpContext.Current.Response.Redirect(url);
+						HttpContext.Current.Response.End();
                     }
                     else if (e.Code == 20500 || e.Code == 28007)
                     {
@@ -254,8 +255,8 @@ namespace Classes.Conexoes
                     }
                     else
                     {
-                        System.Web.HttpContext.Current.Response.Redirect("http://sis.Guard.br/Erro/?cod=" + codErro.ToString());
-                        System.Web.HttpContext.Current.Response.End();
+						HttpContext.Current.Response.Redirect("http://sis.Guard.br/Erro/?cod=" + codErro.ToString());
+						HttpContext.Current.Response.End();
                     }
                     break;
                 case 2:
@@ -302,13 +303,13 @@ namespace Classes.Conexoes
         /// <param name="tipo">Tipo de Comando (StoredProcedure, TableDirect ou Text)</param>
         public void ExecuteNonQuery(String sql, CommandType tipo)
         {
-            _cmd.CommandText = sql;
-            _cmd.CommandType = tipo;
+            Cmd.CommandText = sql;
+            Cmd.CommandType = tipo;
 
             try
             {
                 this.Open();
-                _cmd.ExecuteNonQuery();
+                Cmd.ExecuteNonQuery();
             }
             catch (OracleException e)
             {
@@ -333,15 +334,15 @@ namespace Classes.Conexoes
         /// <param name="tipo">Tipo de Comando (StoredProcedure, TableDirect ou Text)</param>
         public string ExecuteNonQueryProcedure(String sql, CommandType tipo)
         {
-            _cmd.CommandText = sql;
-            _cmd.CommandType = tipo;
+            Cmd.CommandText = sql;
+            Cmd.CommandType = tipo;
             string retorno;
 
             try
             {
                 this.Open();
-                _cmd.ExecuteNonQuery();
-                retorno = _cmd.Parameters["Retorno"].Value.ToString();
+                Cmd.ExecuteNonQuery();
+                retorno = Cmd.Parameters["Retorno"].Value.ToString();
             }
             catch (OracleException e)
             {
@@ -400,13 +401,13 @@ namespace Classes.Conexoes
         public Object ExecuteScalarQuery(String sql, CommandType tipo)
         {
             Object resultado = null;
-            _cmd.CommandText = sql;
-            _cmd.CommandType = tipo;
+            Cmd.CommandText = sql;
+            Cmd.CommandType = tipo;
 
             try
             {
                 this.Open();
-                resultado = _cmd.ExecuteScalar();
+                resultado = Cmd.ExecuteScalar();
             }
             catch (OracleException e)
             {
@@ -458,14 +459,14 @@ namespace Classes.Conexoes
         {
             DataTable dt = new DataTable();
 
-            _cmd.CommandText = sql;
-            _cmd.CommandType = tipo;
+            Cmd.CommandText = sql;
+            Cmd.CommandType = tipo;
 
             try
             {
                 this.Open();
 
-                OracleDataAdapter oda = new OracleDataAdapter(_cmd);
+                OracleDataAdapter oda = new OracleDataAdapter(Cmd);
                 oda.Fill(dt);
                 TotalLinhas = dt.Rows.Count;
             }
@@ -522,13 +523,13 @@ namespace Classes.Conexoes
             Hashtable ht = null;
             List<Hashtable> lista = new List<Hashtable>();
 
-            _cmd.CommandText = sql;
-            _cmd.CommandType = tipo;
+            Cmd.CommandText = sql;
+            Cmd.CommandType = tipo;
 
             try
             {
                 this.Open();
-                dr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dr = Cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
                     ht = new Hashtable(dr.FieldCount);
@@ -580,7 +581,7 @@ namespace Classes.Conexoes
 			{
 				Direction = direction
 			};
-			_cmd.Parameters.Add(oParam);
+			Cmd.Parameters.Add(oParam);
 
         }
 
@@ -596,12 +597,12 @@ namespace Classes.Conexoes
                 oParam = new OracleParameter(paramNome, TipoCampo, x);
             }
             oParam.Direction = direction;
-            _cmd.Parameters.Add(oParam);
+            Cmd.Parameters.Add(oParam);
         }
 
         public void ClearParams()
         {
-            _cmd.Parameters.Clear();
+            Cmd.Parameters.Clear();
         }
         /// <summary>
         /// Converte um DataTable em um Lista de Hashtable
@@ -645,11 +646,11 @@ namespace Classes.Conexoes
 
             //inicia uma transação local
 
-            OracleTransaction transacao = _conn.BeginTransaction();
+            OracleTransaction transacao = Conn.BeginTransaction();
 
             //Alista o command na transação atual.
 
-            OracleCommand comando = _conn.CreateCommand();
+            OracleCommand comando = Conn.CreateCommand();
 
             comando.Transaction = transacao;
 
@@ -695,7 +696,7 @@ namespace Classes.Conexoes
             finally
             {
                 //fecha a conexao com a fonte de dados
-                _conn.Close();
+                Conn.Close();
 
             }
 
