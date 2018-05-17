@@ -1,4 +1,4 @@
-﻿using GuardID.Bases;
+﻿using GuardID.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -23,7 +23,7 @@ namespace GuardID.ViewModel
 		public RotinasGerais()
 		{
 			Descricao = "Realizando um teste de View Model";
-			Background =  new Image { Source = Device.OnPlatform(iOS: "background.png" ,Android:"background",WinPhone:"Imagens.ackground.png") };
+			//Background =  new Image { Source = Device.OnPlatform(iOS: "background.png" ,Android:"background",WinPhone:"Imagens.ackground.png") };
 		}	
 	}
 }

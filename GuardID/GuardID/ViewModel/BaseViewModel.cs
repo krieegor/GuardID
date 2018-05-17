@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace GuardID.Bases
+namespace GuardID.ViewModel
 {
 	public class BaseViewModel :INotifyPropertyChanged
     {

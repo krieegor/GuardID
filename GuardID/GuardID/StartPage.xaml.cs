@@ -13,9 +13,14 @@ namespace GuardID
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class StartPage : ContentPage
 	{
-		public StartPage ()
-		{
-			InitializeComponent ();
+        public Image BackImage { get; set; }
+        public StartPage()
+        {
+            BackImage = new Image
+            {
+                Source = "background",
+            };
+            InitializeComponent ();
 			BindingContext = new RotinasGerais();
 		}
 	}

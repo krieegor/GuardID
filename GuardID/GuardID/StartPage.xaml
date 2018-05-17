@@ -2,14 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:GuardID;assembly=GuardID"
-             x:Class="GuardID.StartPage" >
-    <!--<ContentPage.BackgroundImage>
-        <OnPlatform x:TypeArguments="ImageSource">
-            <OnPlatform.Android>
-                background
-            </OnPlatform.Android>
-        </OnPlatform>
-    </ContentPage.BackgroundImage>-->
+             x:Class="GuardID.StartPage"
+             BackgroundImage="{Binding BackImage}">
+
     <StackLayout>
         
         <Label Text="{Binding Descricao}"

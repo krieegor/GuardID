@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CIDADOES">
+          <Key>
+            <PropertyRef Name="CIDADAO" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="RG" />
+            <PropertyRef Name="CNH" />
+          </Key>
+          <Property Name="CIDADAO" Type="number" Precision="13" Scale="0" Nullable="false" />
+          <Property Name="NOME" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="END" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="TEL" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="CEL" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="D_NASCIMENTO" Type="date" Nullable="false" />
+          <Property Name="CPF" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="CPF_DOC" Type="blob" />
+          <Property Name="RG" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="RG_DOC" Type="blob" Nullable="false" />
+          <Property Name="CNH" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="CNH_DOC" Type="blob" />
+          <Property Name="FOTO" Type="blob" Nullable="false" />
+          <Property Name="NOME_SOCIAL" Type="varchar2" MaxLength="30" />
+          <Property Name="DATA_CADASTRO" Type="date" Nullable="false" />
+          <Property Name="N_PAI" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="N_MAE" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="GENERO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NATURALIDADE" Type="varchar2" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOG_ERROS">
+          <Key>
+            <PropertyRef Name="LOG_ERRO" />
+          </Key>
+          <Property Name="LOG_ERRO" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="DATA" Type="date" Nullable="false" />
+          <Property Name="ERRO" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="DETALHE_COMPLETO" Type="varchar2" MaxLength="4000" Nullable="false" />
+          <Property Name="DETALHE_RESUMENDO" Type="varchar2" MaxLength="400" Nullable="false" />
+          <Property Name="USUARIO" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="MAC_ADRES" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="PRINT_TELA" Type="blob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOGS">
+          <Key>
+            <PropertyRef Name="ID_LOG" />
+          </Key>
+          <Property Name="ID_LOG" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="DATA" Type="date" Nullable="false" />
+          <Property Name="CHAVE" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="DESTALHES" Type="varchar2" MaxLength="4000" Nullable="false" />
+          <Property Name="USUARIO" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="MAC_ADRESS" Type="varchar2" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PLATAFORMAS">
+          <Key>
+            <PropertyRef Name="PLATAFORMA" />
+          </Key>
+          <Property Name="PLATAFORMA" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ATIVO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROGRAMAS">
+          <Key>
+            <PropertyRef Name="PROGRAMA" />
+          </Key>
+          <Property Name="PROGRAMA" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="PLATAFORMA" Type="number" Precision="2" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SETORES">
+          <Key>
+            <PropertyRef Name="SETOR" />
+          </Key>
+          <Property Name="SETOR" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="ATIVO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="CPF" />
+          </Key>
+          <Property Name="USUARIO" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="NOME" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+          <Property Name="ENDERECO" Type="varchar2" MaxLength="100" />
+          <Property Name="CEP" Type="number" Precision="8" Scale="0" />
+          <Property Name="TEL" Type="number" Precision="12" Scale="0" />
+          <Property Name="DN_NASCIMENTO" Type="date" />
+          <Property Name="CPF" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="RG" Type="varchar2" MaxLength="15" />
+          <Property Name="ATIVO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS_SETORES">
+          <Key>
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="SETOR" />
+          </Key>
+          <Property Name="USUARIO" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="SETOR" Type="number" Precision="4" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CIDADOES" EntityType="Self.CIDADOES" Schema="CDG" store:Type="Tables" />
+          <EntitySet Name="LOG_ERROS" EntityType="Self.LOG_ERROS" Schema="LOGS" store:Type="Tables" />
+          <EntitySet Name="LOGS" EntityType="Self.LOGS" Schema="LOGS" store:Type="Tables" />
+          <EntitySet Name="PLATAFORMAS" EntityType="Self.PLATAFORMAS" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="PROGRAMAS" EntityType="Self.PROGRAMAS" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="SETORES" EntityType="Self.SETORES" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="USUARIOS_SETORES" EntityType="Self.USUARIOS_SETORES" Schema="SEG" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities2" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="CIDADOES" EntityType="Model.CIDADOES" />
+          <EntitySet Name="LOG_ERROS" EntityType="Model.LOG_ERROS" />
+          <EntitySet Name="LOGS" EntityType="Model.LOGS" />
+          <EntitySet Name="PLATAFORMAS" EntityType="Model.PLATAFORMAS" />
+          <EntitySet Name="PROGRAMAS" EntityType="Model.PROGRAMAS" />
+          <EntitySet Name="SETORES" EntityType="Model.SETORES" />
+          <EntitySet Name="USUARIOS" EntityType="Model.USUARIOS" />
+          <EntitySet Name="USUARIOS_SETORES" EntityType="Model.USUARIOS_SETORES" />
+        </EntityContainer>
+        <EntityType Name="CIDADOES">
+          <Key>
+            <PropertyRef Name="CIDADAO" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="RG" />
+            <PropertyRef Name="CNH" />
+          </Key>
+          <Property Name="CIDADAO" Type="Int64" Nullable="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="END" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="Int32" Nullable="false" />
+          <Property Name="TEL" Type="Int64" Nullable="false" />
+          <Property Name="CEL" Type="Int64" Nullable="false" />
+          <Property Name="D_NASCIMENTO" Type="DateTime" Nullable="false" />
+          <Property Name="CPF" Type="Int64" Nullable="false" />
+          <Property Name="CPF_DOC" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RG" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RG_DOC" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="CNH" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CNH_DOC" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FOTO" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="NOME_SOCIAL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_CADASTRO" Type="DateTime" Nullable="false" />
+          <Property Name="N_PAI" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="N_MAE" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="GENERO" Type="Int16" Nullable="false" />
+          <Property Name="NATURALIDADE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LOG_ERROS">
+          <Key>
+            <PropertyRef Name="LOG_ERRO" />
+          </Key>
+          <Property Name="LOG_ERRO" Type="Int64" Nullable="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" />
+          <Property Name="ERRO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DETALHE_COMPLETO" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="DETALHE_RESUMENDO" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="Int64" Nullable="false" />
+          <Property Name="MAC_ADRES" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PRINT_TELA" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LOGS">
+          <Key>
+            <PropertyRef Name="ID_LOG" />
+          </Key>
+          <Property Name="ID_LOG" Type="Int64" Nullable="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" />
+          <Property Name="CHAVE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESTALHES" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="Int64" Nullable="false" />
+          <Property Name="MAC_ADRESS" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PLATAFORMAS">
+          <Key>
+            <PropertyRef Name="PLATAFORMA" />
+          </Key>
+          <Property Name="PLATAFORMA" Type="Int16" Nullable="false" />
+          <Property Name="DESCRICAO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ATIVO" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROGRAMAS">
+          <Key>
+            <PropertyRef Name="PROGRAMA" />
+          </Key>
+          <Property Name="PROGRAMA" Type="Int16" Nullable="false" />
+          <Property Name="DESCRICAO" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="PLATAFORMA" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SETORES">
+          <Key>
+            <PropertyRef Name="SETOR" />
+          </Key>
+          <Property Name="SETOR" Type="Int16" Nullable="false" />
+          <Property Name="DESCRICAO" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ATIVO" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="CPF" />
+          </Key>
+          <Property Name="USUARIO" Type="Int64" Nullable="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="Int32" />
+          <Property Name="TEL" Type="Int64" />
+          <Property Name="DN_NASCIMENTO" Type="DateTime" />
+          <Property Name="CPF" Type="Int64" Nullable="false" />
+          <Property Name="RG" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ATIVO" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS_SETORES">
+          <Key>
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="SETOR" />
+          </Key>
+          <Property Name="USUARIO" Type="Int64" Nullable="false" />
+          <Property Name="SETOR" Type="Int16" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities2" >
+          <EntitySetMapping Name="CIDADOES">
+            <EntityTypeMapping TypeName="Model.CIDADOES">
+              <MappingFragment StoreEntitySet="CIDADOES">
+                <ScalarProperty Name="NATURALIDADE" ColumnName="NATURALIDADE" />
+                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+                <ScalarProperty Name="N_MAE" ColumnName="N_MAE" />
+                <ScalarProperty Name="N_PAI" ColumnName="N_PAI" />
+                <ScalarProperty Name="DATA_CADASTRO" ColumnName="DATA_CADASTRO" />
+                <ScalarProperty Name="NOME_SOCIAL" ColumnName="NOME_SOCIAL" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="CNH_DOC" ColumnName="CNH_DOC" />
+                <ScalarProperty Name="CNH" ColumnName="CNH" />
+                <ScalarProperty Name="RG_DOC" ColumnName="RG_DOC" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="CPF_DOC" ColumnName="CPF_DOC" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="D_NASCIMENTO" ColumnName="D_NASCIMENTO" />
+                <ScalarProperty Name="CEL" ColumnName="CEL" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="END" ColumnName="END" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="CIDADAO" ColumnName="CIDADAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_ERROS">
+            <EntityTypeMapping TypeName="Model.LOG_ERROS">
+              <MappingFragment StoreEntitySet="LOG_ERROS">
+                <ScalarProperty Name="PRINT_TELA" ColumnName="PRINT_TELA" />
+                <ScalarProperty Name="MAC_ADRES" ColumnName="MAC_ADRES" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="DETALHE_RESUMENDO" ColumnName="DETALHE_RESUMENDO" />
+                <ScalarProperty Name="DETALHE_COMPLETO" ColumnName="DETALHE_COMPLETO" />
+                <ScalarProperty Name="ERRO" ColumnName="ERRO" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="LOG_ERRO" ColumnName="LOG_ERRO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGS">
+            <EntityTypeMapping TypeName="Model.LOGS">
+              <MappingFragment StoreEntitySet="LOGS">
+                <ScalarProperty Name="MAC_ADRESS" ColumnName="MAC_ADRESS" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="DESTALHES" ColumnName="DESTALHES" />
+                <ScalarProperty Name="CHAVE" ColumnName="CHAVE" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="ID_LOG" ColumnName="ID_LOG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLATAFORMAS">
+            <EntityTypeMapping TypeName="Model.PLATAFORMAS">
+              <MappingFragment StoreEntitySet="PLATAFORMAS">
+                <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="PLATAFORMA" ColumnName="PLATAFORMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROGRAMAS">
+            <EntityTypeMapping TypeName="Model.PROGRAMAS">
+              <MappingFragment StoreEntitySet="PROGRAMAS">
+                <ScalarProperty Name="PLATAFORMA" ColumnName="PLATAFORMA" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="PROGRAMA" ColumnName="PROGRAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SETORES">
+            <EntityTypeMapping TypeName="Model.SETORES">
+              <MappingFragment StoreEntitySet="SETORES">
+                <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="SETOR" ColumnName="SETOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="Model.USUARIOS">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="DN_NASCIMENTO" ColumnName="DN_NASCIMENTO" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS_SETORES">
+            <EntityTypeMapping TypeName="Model.USUARIOS_SETORES">
+              <MappingFragment StoreEntitySet="USUARIOS_SETORES">
+                <ScalarProperty Name="SETOR" ColumnName="SETOR" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
