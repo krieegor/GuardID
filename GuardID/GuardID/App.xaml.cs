@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GuardID.Model.Services.ServicesViewModels;
+using GuardID.Model.Services.ServiceViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,11 @@ namespace GuardID
 		public App ()
 		{
 			InitializeComponent();
+            DependencyService.Register<IMessageService,MessageServices>();
+            DependencyService.Register<INavigationService, NavigationService>();
 
-			MainPage = new NavigationPage(new StartPage());
+
+            MainPage = new NavigationPage(new StartPage());
 		}
 
 		protected override void OnStart ()

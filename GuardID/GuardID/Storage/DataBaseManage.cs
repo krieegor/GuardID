@@ -1,4 +1,4 @@
-﻿using GuardID.Model;
+﻿
 using GuardID.Storage.Interfaces;
 using SQLite;
 using System;
@@ -18,7 +18,7 @@ namespace GuardID.Storage
         public DataBaseManager()
         {
             database = DependencyService.Get<ISQLite>().GetConnection();
-            database.CreateTable<Cadastro>();
+            database.CreateTable<string>();
         }
 
         public void SaveValue<T>(T value) where T : IKeyObject, new()

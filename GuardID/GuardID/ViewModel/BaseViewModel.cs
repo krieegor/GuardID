@@ -1,13 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using GuardID.Model.Services;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace GuardID.ViewModel
 {
 	public class BaseViewModel :INotifyPropertyChanged
-    {
-		public event PropertyChangedEventHandler PropertyChanged;
-		protected virtual void OnPropertyChange([CallerMemberName]string propertyName = null)
+    {        
+        public event PropertyChangedEventHandler PropertyChanged;
+       
+        protected virtual void OnPropertyChange([CallerMemberName]string propertyName = null)
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(propertyName)));
 		}
@@ -22,6 +29,6 @@ namespace GuardID.ViewModel
 			OnPropertyChange(propertyName);
 
 			return true;
-		}
-	}
+		}       
+    }
 }

@@ -1,15 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:GuardID;assembly=GuardID"
              x:Class="GuardID.StartPage"
-             BackgroundImage="{Binding BackImage}">
+             x:Name="SPage"
+             NavigationPage.HasNavigationBar="False"
+             Rotation="0">
 
-    <StackLayout>
-        
-        <Label Text="{Binding Descricao}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Image Source="{Binding Background}" Aspect="AspectFill" />
+
+        <RelativeLayout >
+
+            <Image x:Name="imgIco1" 
+                    Source="{Binding LogoIcon1}"  
+                    Margin="0,20,0,0"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.0,Constant=0}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.25, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.37,Constant=0}"
+                       
+                    />
+
+            <Image Source="{Binding LogoIcon2}" Margin="0,0,0,0"  HorizontalOptions="Center" 
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.38,Constant=0}"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.0, Constant=0}"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1,Constant=0}"/>
+            
+            <!--<Image Source="{Binding ButtonCadastro}"   Margin="0,200,0,0"  HorizontalOptions="Center"  />-->
+            <Button Image="{Binding ButtonCadastro}"  HorizontalOptions="Center" Command="{Binding BtnNewGuardID}"
+                    BackgroundColor="Transparent"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.79,Constant=0}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.10, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.8,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1,Constant=0}"/>
+
+            <Image Source="{Binding LineHorizontal}" 
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.87,Constant=0}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.0, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1,Constant=0}"
+                    />
+
+
+            <Button Image="{Binding Sobre}" BackgroundColor="Transparent"  Command="{Binding BtnNewGuardID}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=btnSobre, Property=Height, Factor=.915,Constant=0}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=btnSobre, Property=Width, Factor=.0, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1,Constant=0}"
+                    
+                />
+            <Button Image="{Binding Entrar}" BackgroundColor="Transparent"  Command="{Binding BtnLogin}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=btnEntrar, Property=Height, Factor=.915, Constant=0}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=btnEntrar, Property=Width, Factor=.60, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.4,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1,Constant=.0}"
+                />
+            <Image Source="{Binding LineVertical}" 
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=LVertical, Property=Height, Factor=915,Constant=0}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=LVertical, Property=Width , Factor=59, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.47,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=0}"
+                />
+
+        </RelativeLayout>
+    </Grid>
 </ContentPage>
     

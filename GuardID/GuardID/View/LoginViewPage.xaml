@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardID.View.LoginViewPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="{Binding Background}" Aspect="AspectFill" />
+
+            <StackLayout Padding="28">
+                <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="emial@server.com"/>
+                <Entry IsPassword="True" Text="{Binding Senha}"  Placeholder="password"/>
+                <Button Text="Login" Command="{Binding LoginCommand}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
