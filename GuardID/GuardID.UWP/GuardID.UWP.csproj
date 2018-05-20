@@ -105,13 +105,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagens\background.png" />
+    <Content Include="Imagens\BoaVindasFuturo.png" />
     <Content Include="Imagens\btnCasdastrar.png" />
+    <Content Include="Imagens\BtnProsseguir.png" />
+    <Content Include="Imagens\DIGITESEUCPF.png" />
     <Content Include="Imagens\Entrar.png" />
+    <Content Include="Imagens\EntryCPF.png" />
+    <Content Include="Imagens\EntryDn.png" />
+    <Content Include="Imagens\FEMININO.png" />
+    <Content Include="Imagens\homem1tracado.png" />
     <Content Include="Imagens\LineHorizontal.png" />
     <Content Include="Imagens\LineVertical.png" />
+    <Content Include="Imagens\LogoCadastro.png" />
+    <Content Include="Imagens\LogoCadastroN.png" />
     <Content Include="Imagens\logoico1.png" />
     <Content Include="Imagens\logoico2.png" />
+    <Content Include="Imagens\MASCULINO.png" />
+    <Content Include="Imagens\mulher01tracado.png" />
+    <Content Include="Imagens\SELECIONESEUGENERO.png" />
     <Content Include="Imagens\Sobre.png" />
+    <Content Include="Imagens\txtDataN.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />

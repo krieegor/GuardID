@@ -174,4 +174,43 @@
   <ItemGroup>
     <BundleResource Include="Resources\Sobre.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BoaVindasFuturo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BtnProsseguir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DIGITESEUCPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\EntryCPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\EntryDn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FEMININO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homem1tracado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogoCadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogoCadastroN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MASCULINO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mulher01tracado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SELECIONESEUGENERO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\txtDataN.png" />
+  </ItemGroup>
 </Project>

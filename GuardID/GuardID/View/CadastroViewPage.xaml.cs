@@ -1,4 +1,6 @@
-﻿
+﻿using GuardID.ViewModel;
+using System.Collections.Generic;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,7 @@ namespace GuardID.View
 		public CadastroViewPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new CadastroViewPage();
-		}
+            BindingContext = new CadastroViewModel();            
+		}        
 	}
 }

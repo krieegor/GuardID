@@ -2,13 +2,52 @@
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GuardID.View.CadastroViewPage">
-    <ContentPage>
-        <ContentPage.Content>
-            <StackLayout>
-                <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            </StackLayout>
-        </ContentPage.Content>
-    </ContentPage>
+
+    <CarouselPage.Children>
+        <ContentPage>
+            <ContentPage.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS, Android" Value="0,0,0,0" />
+                </OnPlatform>
+            </ContentPage.Padding>
+            <Grid>
+                <Image Source="{Binding Background}" Aspect="AspectFill" />
+                <StackLayout>
+                    <Label Text="{Binding Name}" FontSize="Medium" HorizontalOptions="Center" />
+                    <BoxView Color="{Binding Color}" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                    <Button Text="Next" />
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+        <ContentPage>
+            <ContentPage.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS, Android" Value="0,0,0,0" />
+                </OnPlatform>
+            </ContentPage.Padding>
+            <Grid>
+                <Image Source="{Binding Background}" Aspect="AspectFill" />
+                <StackLayout>
+                    <Label Text="Blue" FontSize="Medium" HorizontalOptions="Center" />
+                    <BoxView Color="Blue" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+        <ContentPage>
+            <ContentPage.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS, Android" Value="0,0,0,0" />
+                </OnPlatform>
+            </ContentPage.Padding>
+            <Grid>
+                <Image Source="{Binding Background}" Aspect="AspectFill" />
+                <StackLayout>
+                    <Label Text="Green" FontSize="Medium" HorizontalOptions="Center" />
+                    <BoxView Color="Green" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+    </CarouselPage.Children>
+
+
 </CarouselPage>
