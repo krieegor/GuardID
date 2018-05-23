@@ -1,10 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:CurvedEntry"
              x:Class="GuardID.App">
 	<Application.Resources>
+        
+            <ResourceDictionary>
+            <Color x:Key="MyRoxoColor" >#452845</Color>
+            <Style x:Key="myBodyStyleBold" TargetType="Label" >
+                <Setter Property="TextColor" Value="{StaticResource MyRoxoColor}" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="myBodyStyle" TargetType="Label" >
+                <Setter Property="TextColor" Value="{StaticResource MyRoxoColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+            </Style>
+            <Style x:Key="myEntry" TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource MyRoxoColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="EntryCuston" TargetType="custom:CustomEntry">
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="IsCurvedCornersEnabled" Value="true"/>
+                <Setter Property="TextColor" Value="{StaticResource MyRoxoColor}"/>
+                <Setter Property="BackgroundColor" Value="#ffffff"/>
+            </Style>
 
-		<!-- Application resource dictionary -->
+            <Style x:Key="ButtonCuston" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MyRoxoColor}"/>
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+                
+
+        </ResourceDictionary>
+        
+        <!-- Application resource dictionary -->
 
 	</Application.Resources>
 </Application>

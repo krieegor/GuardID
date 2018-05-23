@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GuardID.View.CadastroViewPage">
+             x:Class="GuardID.View.CadastroViewPage"
+             x:Name="CarouselCadastro">
+    
+
+
 
     <CarouselPage.Children>
         <ContentPage>
@@ -15,11 +19,11 @@
                 <StackLayout>
                     <Label Text="{Binding Name}" FontSize="Medium" HorizontalOptions="Center" />
                     <BoxView Color="{Binding Color}" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-                    <Button Text="Next" />
+                    <Button Text="Next" x:Name="NextCadA" Clicked="NextCadA_Clicked"  />
                 </StackLayout>
             </Grid>
         </ContentPage>
-        <ContentPage>
+        <ContentPage  >
             <ContentPage.Padding>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS, Android" Value="0,0,0,0" />

@@ -18,8 +18,9 @@ namespace GuardID
             DependencyService.Register<INavigationService, NavigationService>();
 
 
-            MainPage = new NavigationPage(new StartPage());
-		}
+            //MainPage = new NavigationPage(new StartPage());
+            MainPage = new NavigationPage(new View.PageModelo());
+        }
 
 		protected override void OnStart ()
 		{

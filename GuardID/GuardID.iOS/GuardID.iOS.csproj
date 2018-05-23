@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Storage\Implementations\CustomEntryRenderer.cs" />
     <Compile Include="Storage\Implementations\SQLiteIOS.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

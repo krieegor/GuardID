@@ -1,13 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GuardID.View.PageModelo">
+             xmlns:local="clr-namespace:CurvedEntry"
+             x:Class="GuardID.View.PageModelo"
+             xmlns:custom="clr-namespace:CurvedEntry"
+             x:Name="PageModel">
+    
     <Grid>
         <Image Source="{Binding Background}" Aspect="AspectFill" />
-        <StackLayout>
+        <RelativeLayout>
             
-            <Image Source="{Binding LogoIco1}"/>
-            <Label Text="{Binding Name}"/>
-        </StackLayout>
+            <Image Source="{Binding LogoIco1}" x:Name="LogoIco1"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.01,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-.04, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.3,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.17,Constant=0}"/>
+            
+            <Image Source="{Binding LogoIco2}" x:Name="LogoIco2"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=-.01,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.14, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.22,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1,Constant=0}"/>
+
+            <Label Text="{Binding Name}" Style="{StaticResource myBodyStyleBold}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.08,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"/>
+
+            <Label Text="{Binding titleGenero}" Style="{StaticResource myBodyStyle}" FontSize="14"      
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.25,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"/>
+
+            <Button  x:Name="btnClickF"  Command="{Binding CommandClickF}"   BackgroundColor="{Binding ColorClickF}"   Image="{Binding ImgGeneroF}"               
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.3,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=124}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=135}"/>
+
+            <!--<Image Source="{Binding ImgGeneroF}" x:Name="imgGeneroF"  BackgroundColor="{Binding ColorClickF}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.3,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=124}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=135}"/>-->
+
+            <Button BackgroundColor="{Binding VisivelM}" x:Name="btnClickM" Image="{Binding imgGeneroM}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.3,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.58 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.0,Constant=124}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.0,Constant=135}"/>
+
+            <!--<Image Source="{Binding imgGeneroM}" x:Name="imgGeneroM" 
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.3,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.58 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.0,Constant=124}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.0,Constant=135}"/>-->
+
+            <Label Text="DIGITE SEU CPF" Style="{StaticResource myBodyStyle}" 
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.60,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.35 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.3,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.04,Constant=0}"/>
+
+            <custom:CustomEntry Style="{StaticResource EntryCuston}" Placeholder="000.000.000-00"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.64,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.7,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.04,Constant=0}"/>
+
+            <Label Text="DIGITE SUA DATA DE NASCIMENTO" Style="{StaticResource myBodyStyle}"  
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.7,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.0 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.04,Constant=0}"/>
+
+            <custom:CustomEntry Style="{StaticResource EntryCuston}" Placeholder="DD/MM/AAAA"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.74,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.7,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.04,Constant=0}"/>
+
+            <Button Text="Prosseguir" x:Name="btnProsseguir" Style="{StaticResource ButtonCuston}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.785,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.55 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.30,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.06,Constant=0}"/>
+        </RelativeLayout>
     </Grid>
 </ContentPage>
