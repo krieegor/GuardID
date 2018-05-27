@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace CurvedEntry
+namespace GuardID
 {
     public class CustomEntry : Entry
     {
@@ -15,7 +15,7 @@ namespace CurvedEntry
             typeof(Color),
             typeof(CustomEntry),
             Color.Gray);
-
+       
         // Gets or sets BorderColor value
         public Color BorderColor
         {
@@ -23,13 +23,26 @@ namespace CurvedEntry
             set { SetValue(BorderColorProperty, value); }
         }
 
+        public static readonly BindableProperty BackgroundColorProperty =
+           BindableProperty.Create(
+               nameof(BackgroundColor),
+               typeof(Color),
+               typeof(CustomEntry),
+               Color.White);
+        
+        //Get or sets BackgroundColor value
+        public Color BackgroundColor
+        {
+            get { return (Color)GetValue(BackgroundColorProperty); }
+            set { SetValue(BackgroundColorProperty, value); }
+        }
 
         public static readonly BindableProperty BorderWidthProperty =
         BindableProperty.Create(
             nameof(BorderWidth),
             typeof(int),
             typeof(CustomEntry),
-            Device.OnPlatform<int>(1, 2, 2));
+            Device.OnPlatform<int>(0, 0, 0));
 
         // Gets or sets BorderWidth value
         public int BorderWidth
@@ -44,7 +57,7 @@ namespace CurvedEntry
             nameof(CornerRadius),
             typeof(double),
             typeof(CustomEntry),
-            Device.OnPlatform<double>(6, 7, 7));
+            Device.OnPlatform<double>(0, 0, 0));
 
         // Gets or sets CornerRadius value
         public double CornerRadius
@@ -68,7 +81,5 @@ namespace CurvedEntry
             set { SetValue(IsCurvedCornersEnabledProperty, value); }
         }
 
-    }
-
-
+    }    
 }

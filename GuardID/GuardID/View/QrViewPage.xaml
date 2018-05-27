@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardID.View.QrViewPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonQr" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MyRoxoColor}"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Image" Value="{Binding ImgCamera}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="{Binding Background}" Aspect="AspectFill" />
+            <RelativeLayout>
+
+                <Label Text="{Binding lblDescricao }"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.05, Constant=.0}"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.05, Constant=0.05}"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1, Constant=0}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"
+                       />
+                
+                <BoxView WidthRequest="250"
+                     HeightRequest="250"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.0, Constant=.0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.0, Constant=0.05}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1, Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"
+                     Color="Blue"/>
+
+                <Button Text="Prosseguir" x:Name="btnProsseguir" 
+                        Command="{Binding BtnProsseguir}"                           
+                        Style="{StaticResource ButtonQr}"
+                        
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.75,Constant=0}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.25 ,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.130,Constant=0}"/>
+            </RelativeLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

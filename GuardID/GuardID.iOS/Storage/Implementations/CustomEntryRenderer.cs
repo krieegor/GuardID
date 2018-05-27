@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Foundation;
 using UIKit;
 using Xamarin.Forms;
-using CurvedEntry;
-using CurvedEntry.iOS;
 using Xamarin.Forms.Platform.iOS;
 using CoreGraphics;
+using GuardID.iOS;
+using GuardID;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace CurvedEntry.iOS
+namespace GuardID.iOS
 {
     public class CustomEntryRenderer : EntryRenderer
     {

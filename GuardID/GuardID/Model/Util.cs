@@ -4,19 +4,25 @@ namespace GuardID
 {
     public class Util
     {
-        public static string ImagePorSistema(string NmImage)
+        public static string ImagePorSistema(string nmImage)
         {
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    return NmImage + ".png";
+                    return nmImage + ".png";
                 case Device.Android:
-                    return NmImage;
+                    return nmImage;
                 case Device.UWP:
-                    return "Imagens." + NmImage + ".png";
+                    return "Imagens." + nmImage + ".png";
                 default:
                     return null;
             }
+        }
+        public static string BuscaPrimeiroNome(string nome)
+        {
+            string[] Nm = nome.Split(' ');
+            return Nm[0];
+
         }
     }
 }

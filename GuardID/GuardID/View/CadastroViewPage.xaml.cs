@@ -46,5 +46,10 @@ namespace GuardID.View
                 this.CurrentPage = this.Children[currentPage];
             }));
         }
+
+        private void NextCadB_Clicked(object sender, System.EventArgs e)
+        {
+
+        }       
     }
 }

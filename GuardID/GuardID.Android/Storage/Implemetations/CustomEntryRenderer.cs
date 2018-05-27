@@ -1,23 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Xamarin.Forms;
-using CurvedEntry.Droid;
 using Xamarin.Forms.Platform.Android;
 using Android.Graphics.Drawables;
 using Android.Util;
-using CurvedEntry;
+using GuardID.Droid;
+using GuardID;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace CurvedEntry.Droid
+namespace GuardID.Droid
 {
     public class CustomEntryRenderer : EntryRenderer
     {
@@ -49,11 +40,16 @@ namespace CurvedEntry.Droid
                 }
 
                 // Set padding for the internal text from border
-                Control.SetPadding(
-                    (int)DpToPixels(this.Context, Convert.ToSingle(12)),
-                    Control.PaddingTop,
-                    (int)DpToPixels(this.Context, Convert.ToSingle(12)),
-                    Control.PaddingBottom);
+                Control.SetPadding(10, 2, 10, 2);
+                    //(int)DpToPixels(this.Context, Convert.ToSingle(10)),
+                    //Control.PaddingLeft,
+                    //(int)DpToPixels(this.Context, Convert.ToSingle(10)),
+                    //Control.PaddingTop,
+                    //(int)DpToPixels(this.Context, Convert.ToSingle(10)),
+                    //Control.PaddingRight,
+                    //(int)DpToPixels(this.Context, Convert.ToSingle(10)),
+                    //Control.PaddingBottom
+                    //);
             }
         }
         public static float DpToPixels(Context context, float valueInDp)

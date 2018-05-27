@@ -113,7 +113,9 @@
     <Content Include="Imagens\EntryCPF.png" />
     <Content Include="Imagens\EntryDn.png" />
     <Content Include="Imagens\FEMININO.png" />
+    <Content Include="Imagens\homem1.png" />
     <Content Include="Imagens\homem1tracado.png" />
+    <Content Include="Imagens\ImgCamera.png" />
     <Content Include="Imagens\LineHorizontal.png" />
     <Content Include="Imagens\LineVertical.png" />
     <Content Include="Imagens\LogoCadastro.png" />
@@ -174,6 +176,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.469394-pre1" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.4" />
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GuardID\GuardID.csproj">

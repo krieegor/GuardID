@@ -19,7 +19,7 @@ namespace GuardID
 
 
             //MainPage = new NavigationPage(new StartPage());
-            MainPage = new NavigationPage(new View.PageModelo());
+            MainPage = new NavigationPage(new View.QrViewPage());
         }
 
 		protected override void OnStart ()

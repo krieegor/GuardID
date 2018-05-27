@@ -10,10 +10,10 @@ using Xamarin.Forms;
 
 namespace GuardID.ViewModel
 {
-	public class BaseViewModel :INotifyPropertyChanged
+	public class BaseViewModel : INotifyPropertyChanged
     {        
-        public event PropertyChangedEventHandler PropertyChanged;
-       
+        public event PropertyChangedEventHandler PropertyChanged;      
+
         protected virtual void OnPropertyChange([CallerMemberName]string propertyName = null)
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(propertyName)));
@@ -30,5 +30,7 @@ namespace GuardID.ViewModel
 
 			return true;
 		}       
+
+
     }
 }
