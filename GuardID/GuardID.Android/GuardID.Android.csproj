@@ -64,12 +64,16 @@
     <PackageReference Include="ZXing.Net.Mobile">
       <Version>2.4.1</Version>
     </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\Implemetations\CustomEntryRenderer.cs" />
+    <Compile Include="Storage\Implemetations\QrScanningService.cs" />
     <Compile Include="Storage\Implemetations\SQLiteDroid.cs" />
   </ItemGroup>
   <ItemGroup>

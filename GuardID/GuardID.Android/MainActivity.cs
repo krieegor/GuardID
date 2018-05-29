@@ -17,6 +17,9 @@ namespace GuardID.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            //Adicionei esta linha para funcionamento do projeto Android com ZXing
+            ZXing.Mobile.MobileBarcodeScanner.Initialize(Application);
+
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);

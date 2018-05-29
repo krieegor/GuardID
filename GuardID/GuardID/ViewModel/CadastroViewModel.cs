@@ -13,7 +13,7 @@ namespace GuardID.ViewModel
         public string ImgGeneroF { get; set; }
         public string imgGeneroM { get; set; }
         public string titleGenero { get; set; }
-        public Command ForwadPageSwitch;
+        public Command BtnProsseguir;
         public string LblNome { get; set; }
         public string LblCpf { get; set; }
         public string LblIdade { get; set; }
@@ -75,9 +75,9 @@ namespace GuardID.ViewModel
 
             ColorClickF =   Color.Transparent;                     
            
-            ForwadPageSwitch = new Command(ForwadPage);
+            //ForwadPageSwitch = new Command(ForwadPage);
             CommandClickF = new Command(ClickF);
-            //BtnProsseguir = new Command(ForwadPage);
+            BtnProsseguir = new Command(ForwadPage);
 
             //TxtCpf = Format(TxtCpf);
         }

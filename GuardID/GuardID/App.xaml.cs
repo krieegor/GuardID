@@ -16,10 +16,10 @@ namespace GuardID
 			InitializeComponent();
             DependencyService.Register<IMessageService,MessageServices>();
             DependencyService.Register<INavigationService, NavigationService>();
+            
 
-
-            //MainPage = new NavigationPage(new StartPage());
-            MainPage = new NavigationPage(new View.QrViewPage());
+            MainPage = new NavigationPage(new StartPage());
+            //MainPage = new NavigationPage(new View.LoginViewPage());
         }
 
 		protected override void OnStart ()
